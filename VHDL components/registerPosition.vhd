@@ -6,9 +6,9 @@ use ieee.std_logic_1164.all;
 entity registerPosition is
 	port(
 		--2 seperate registers for row and column position data
-		CLK : in std_logic;
-		ROW_IN,COL_IN : in std_logic_vector(3 downto 0);
-		ROW_EN,COL_EN,OE : in std_logic;
+		CLK 			: in std_logic;
+		ROW_IN,COL_IN 		: in std_logic_vector(3 downto 0);
+		ROW_EN,COL_EN,OE 	: in std_logic;
 		
 		--bits 7-4 will be column number (MSBs)
 		--bits 3-0 will be row number    (LSBs)
