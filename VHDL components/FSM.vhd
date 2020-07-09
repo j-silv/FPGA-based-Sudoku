@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity FSM is
 	port(
 		--GENERAL--
-		CLK		 	: in std_logic;
+		CLK		 : in std_logic;
 		RESET	 	: in std_logic;
 		
 		--INPUTS--
