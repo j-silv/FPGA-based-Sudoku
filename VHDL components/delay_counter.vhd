@@ -7,7 +7,7 @@ entity delay_counter is
 	generic(
 		--constants used so that the max count can be automatically determined for a given delay
 		constant CLOCK_FREQ 	: integer := 100E6; 	--for Quartus II simulation, a 100 MHz clock is used
-		constant DELAY 			: integer := 5			--specified delay in seconds
+		constant DELAY 		: integer := 5			--specified delay in seconds
 	);
 	
 	port(
@@ -16,7 +16,7 @@ entity delay_counter is
 		
 		--(CLOCK_FREQ * DELAY) calculates the number of count cycles necesary for the desired DELAY
 		--the rest of the mathematical expression determines the bit size necessary for this max count using the (log2(n) + 1) technique
-		Q		: buffer unsigned((integer(ceil(log2(real(CLOCK_FREQ * DELAY)))) - 1) downto 0) := (others => '0');
+		Q	: buffer unsigned((integer(ceil(log2(real(CLOCK_FREQ * DELAY)))) - 1) downto 0) := (others => '0');
 		DONE 	: out std_logic := '0'
 	);
 end entity delay_counter;
