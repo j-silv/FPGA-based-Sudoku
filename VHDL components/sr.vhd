@@ -9,17 +9,17 @@ entity sr is
 	);
 
 	port(
-		CLK	   			: in std_logic;
-		EN				: in std_logic; 	--stops shifting/latching data
-		OE 				: in std_logic;  	--tristate buffer
+		CLK	   		: in std_logic;
+		EN			: in std_logic; 	--stops shifting/latching data
+		OE 			: in std_logic;  	--tristate buffer
 		RESET   		: in std_logic;
-		SEL				: in std_logic;  	--SEL = '1' serial load, SEL = '0' parallel load
+		SEL			: in std_logic;  	--SEL = '1' serial load, SEL = '0' parallel load
 		
 		SR_IN			: in std_logic; 	--serial IN
 		SR_OUT			: out std_logic;	--serial OUT
 
-		D				: in std_logic_vector(7 downto 0); --parallel IN
-		Q				: out std_logic_vector(7 downto 0) --parallel OUT
+		D			: in std_logic_vector(7 downto 0); --parallel IN
+		Q			: out std_logic_vector(7 downto 0) --parallel OUT
 	);
 end entity;
 
