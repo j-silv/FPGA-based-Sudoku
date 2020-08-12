@@ -1,16 +1,16 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity debug is
+entity debug_LED_grid is
 	port(
 		clk : in std_logic;
 		column_select : out std_logic_vector(2 downto 0);
 		row0, row1 : out std_logic_vector(6 downto 0) := "0000000"
 	);
 
-end entity debug;
+end entity debug_LED_grid;
 
-architecture logic of debug is
+architecture logic of debug_LED_grid is
 	signal pre_column_select : std_logic_vector(2 downto 0) := "110";
 	
 	component debug_open_drain 
