@@ -6,15 +6,15 @@ entity full_design_all_signals is
 end;
 
 architecture bench of full_design_all_signals is
-	component schema_v06 
+	component schema_v08 
 		PORT
 		(
 			ROW_ON :  IN  STD_LOGIC;
 			COL_ON :  IN  STD_LOGIC;
 			DIG_ON :  IN  STD_LOGIC;
-			RST :  IN  STD_LOGIC;
 			FSM_RST :  IN  STD_LOGIC;
 			SYS_CLK :  IN  STD_LOGIC;
+			SHIFT_RST :  IN  STD_LOGIC;
 			keyboard_in :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 			DELAY_RST :  OUT  STD_LOGIC;
 			KEY_CNT :  OUT  STD_LOGIC;
@@ -31,11 +31,13 @@ architecture bench of full_design_all_signals is
 			SHIFT_OUT :  OUT  STD_LOGIC;
 			INV_CLK :  OUT  STD_LOGIC;
 			CLK :  OUT  STD_LOGIC;
+			addr_decoder :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
 			column_select :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
 			encoded_ledseg :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
 			encoded_position :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0);
 			keyboard_out :  OUT  STD_LOGIC_VECTOR(9 DOWNTO 0);
-			ram_addr :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
+			pos_register :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+			ram_addr :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
 			ram_in :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
 			ram_out :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
 			row_0 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -53,9 +55,9 @@ architecture bench of full_design_all_signals is
 		signal ROW_ON :    STD_LOGIC;
 		signal COL_ON :    STD_LOGIC;
 		signal DIG_ON :    STD_LOGIC;
-		signal RST :    STD_LOGIC;
 		signal FSM_RST :    STD_LOGIC;
 		signal SYS_CLK :    STD_LOGIC;
+		signal SHIFT_RST :    STD_LOGIC;
 		signal keyboard_in :    STD_LOGIC_VECTOR(9 DOWNTO 0);
 		signal DELAY_RST :    STD_LOGIC;
 		signal KEY_CNT :    STD_LOGIC;
@@ -72,11 +74,13 @@ architecture bench of full_design_all_signals is
 		signal SHIFT_OUT :    STD_LOGIC;
 		signal INV_CLK :    STD_LOGIC;
 		signal CLK :    STD_LOGIC;
+		signal addr_decoder :  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		signal column_select :    STD_LOGIC_VECTOR(8 DOWNTO 0);
 		signal encoded_ledseg :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 		signal encoded_position :    STD_LOGIC_VECTOR(3 DOWNTO 0);
 		signal keyboard_out :    STD_LOGIC_VECTOR(9 DOWNTO 0);
-		signal ram_addr :    STD_LOGIC_VECTOR(8 DOWNTO 0);
+		signal pos_register : STD_LOGIC_VECTOR(7 DOWNTO 0);
+		signal ram_addr :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 		signal ram_in :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 		signal ram_out :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 		signal row_0 :    STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -100,13 +104,13 @@ architecture bench of full_design_all_signals is
 		
 begin
 
-	comp : schema_v06 
+	comp : schema_v08 
 	port map(ROW_ON => ROW_ON, 
 			 COL_ON => COL_ON, 
-			 DIG_ON => DIG_ON, 
-			 RST => RST, 
+			 DIG_ON => DIG_ON,  
 			 FSM_RST => FSM_RST, 
 			 SYS_CLK => SYS_CLK, 
+			 SHIFT_RST => SHIFT_RST,
 			 keyboard_in => keyboard_in, 
 			 DELAY_RST =>  DELAY_RST, 
 			 KEY_CNT => KEY_CNT, 
@@ -123,10 +127,12 @@ begin
 			 SHIFT_OUT => SHIFT_OUT, 
 			 INV_CLK => INV_CLK, 
 			 CLK => CLK, 
+			 addr_decoder => addr_decoder,
 			 column_select => column_select, 
 			 encoded_ledseg => encoded_ledseg, 
 			 encoded_position => encoded_position, 
-			 keyboard_out => keyboard_out, 
+			 keyboard_out => keyboard_out,
+			 pos_register => pos_register,
 			 ram_addr => ram_addr, 
 			 ram_in => ram_in, 
 			 ram_out => ram_out, 
@@ -143,7 +149,7 @@ begin
 	
 	--reset the FSM and shift register to initial state
 	FSM_RST <= '1', '0' after 11 us;
-	RST <= '1', '0' after 11 us;
+	SHIFT_RST <= '1', '0' after 11 us;
 	--here we would want to reset registers as well !!
 	
 	--input (ON) signals from the keyboard
