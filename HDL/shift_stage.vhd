@@ -5,16 +5,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
---package for 8-stage 8-bit shift register array type
-package shift_register_array is
-	type shift_register is array (8 downto 0) of std_logic_vector(7 downto 0);
-end package shift_register_array;
 
-library ieee;
-use ieee.std_logic_1164.all;
-library work;
-use work.shift_register_array.all;
-
+--seems as though the schematic editor doesn't like double arrays... grrr
+--Ok, I'm just going to output all the signals and break them up into individual vectors
+--I need to do this so that I can set an output signal for each vector during simulation/debug
 entity shift_stage is
 	port(
 		--if shift_en = '1', parallel shifting is enabled
@@ -24,17 +18,21 @@ entity shift_stage is
 		--this is where the data will come in
 		data_in : in std_logic_vector(7 downto 0);
 		
-		--this array corresponds to each row connected to the LED matrix
-		row : out shift_register := (others => (others => '0'))
+		--each row is connected to the LED matrix
+		--each row is explicitly declared for schematic entry of the entire design
+		--(the 2D array is converted into a std_logic type by the schematic entry, thus this is necessary)
+		row_0,row_1,row_2,row_3,row_4,row_5,row_6,row_7,row_8 : out std_logic_vector(7 downto 0) := x"00"
 	);
 end entity shift_stage;
 
 architecture logic of shift_stage is
 	--internally shifting data
+	type shift_register is array (8 downto 0) of std_logic_vector(7 downto 0);
 	signal temp_row : shift_register := (others => (others => '0'));
 begin
 	process(rst,clk)
 	begin 
+		--asynchronous reset!
 		if rst ='1' then
 			temp_row <= (others => (others => '0'));
 		else 
@@ -57,7 +55,15 @@ begin
 	begin
 		if rising_edge(shift_out) then
 			--update LED segment data for LED matrix
-			row <= temp_row;
+			row_0 <= temp_row(0);
+			row_1 <= temp_row(1);
+			row_2 <= temp_row(2);
+			row_3 <= temp_row(3);
+			row_4 <= temp_row(4);
+			row_5 <= temp_row(5);
+			row_6 <= temp_row(6);
+			row_7 <= temp_row(7);
+			row_8 <= temp_row(8);
 		end if;
 	end process;
 end architecture logic;
