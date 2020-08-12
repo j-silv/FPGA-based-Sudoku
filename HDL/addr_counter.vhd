@@ -2,14 +2,16 @@ library ieee;
 use ieee.std_logic_1164.all,
 	ieee.numeric_std.all;
 
-entity addr_counter is 
+-- Get rid of output enable signal
+
+entity addr_counter_v02 is 
 	port(
-		CLK,CNT_EN,OE : in std_logic;
+		CLK,CNT_EN : in std_logic;
 		Q : out std_logic_vector(7 downto 0) 
 	);
-end entity addr_counter;
+end entity addr_counter_v02;
 
-architecture logic of addr_counter is 
+architecture logic of addr_counter_v02 is 
 	signal temp_Q : std_logic_vector(7 downto 0):=x"00";
 	constant COUNTCOLUMN : std_logic_vector(7 downto 0):=x"10";
 	constant COUNTROW : std_logic_vector(7 downto 0):=x"01";
@@ -36,16 +38,8 @@ begin
 			end if;
 		end if;
 	end process;
-	
-	--tri state
-	data_out : process(temp_Q,OE) is
-	begin
-		if OE='0' then
-			Q <=x"ZZ";
-		else
-			--update outputs for next memory address
-			Q <= temp_Q;
-		end if;
-	end process;	
-end architecture logic;
 
+	--update the output to point to the next memory address
+	Q <= temp_Q;
+	
+end architecture logic;
