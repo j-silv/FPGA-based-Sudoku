@@ -2,16 +2,14 @@ library ieee;
 use ieee.std_logic_1164.all,
 	ieee.numeric_std.all;
 
--- Get rid of output enable signal
-
-entity addr_counter_v02 is 
+entity addr_counter is 
 	port(
 		CLK,CNT_EN : in std_logic;
 		Q : out std_logic_vector(7 downto 0) 
 	);
 end entity addr_counter_v02;
 
-architecture logic of addr_counter_v02 is 
+architecture logic of addr_counter is 
 	signal temp_Q : std_logic_vector(7 downto 0):=x"00";
 	constant COUNTCOLUMN : std_logic_vector(7 downto 0):=x"10";
 	constant COUNTROW : std_logic_vector(7 downto 0):=x"01";
