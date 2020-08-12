@@ -1,0 +1,1 @@
+This folder contains the memory initialization files for various components of the Sudoku design (RAM for example).

@@ -1,0 +1,1 @@
+This folder contains the HDL files for each component in the Sudoku design (RAM, encoders, counters, etc.)

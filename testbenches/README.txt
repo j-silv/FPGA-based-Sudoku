@@ -1,0 +1,1 @@
+This folder contains testbench code for simulating and testing the Sudoku design in ModelSim (Altera).
