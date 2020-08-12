@@ -1,0 +1,1 @@
+This folder contains the various files needed to debug/test the Sudoku design with actual hardware
