@@ -12,11 +12,11 @@ end entity addr_bus_mux;
 architecture logic of addr_bus_mux is
 begin
 	process(ADDR_OE, REG_OE, addr_counter, pos_register)
-		--this variable holds the concatenation of inputs ADDR_OE and REG_OE
-		--this allows for a simple case statement which controls who accesses the bus line
+		-- this variable holds the concatenation of inputs ADDR_OE and REG_OE
+		-- this allows for a simple case statement which controls who accesses the bus line
 		variable sel : std_logic_vector(1 downto 0) := "10";
 	begin
-		--concatenate the selection inputs
+		-- concatenate the selection inputs
 		sel := ADDR_OE & REG_OE;
 		
 		case sel is
@@ -24,7 +24,7 @@ begin
 				ram_addr <= pos_register;
 			when "10" =>
 				ram_addr <= addr_counter;
-			--by default, the address counter is enabled for invalid states (00 and 11)
+			-- by default, the address counter is enabled for invalid states (00 and 11)
 			when others =>
 				ram_addr <= addr_counter;
 		end case;

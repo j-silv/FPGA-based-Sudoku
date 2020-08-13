@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
---DFFE register to hold LED segment information ->
+-- DFFE register to hold LED segment information ->
 
 entity ledseg_register is
 	port(
@@ -13,8 +13,8 @@ end entity ledseg_register;
 
 architecture logic of ledseg_register is 
 begin 
-	--if a clk transition is detected, the enable signal is checked
-	--if EN is on, then latch in the LED segment data
+	-- if a clk transition is detected, the enable signal is checked
+	-- if EN is on, then latch in the LED segment data
 	latch : process(CLK) is
 	begin
 		if rising_edge(CLK) then

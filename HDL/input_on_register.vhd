@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity input_on_register is
 	port(
-		--asynchronous reset!
+		-- asynchronous reset!
 		CLK, RST : in std_logic;
 		D0, D1, D2	: in std_logic;
 		Q0, Q1, Q2	: out std_logic := '0'		

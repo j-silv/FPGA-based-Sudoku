@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity fsm is
 	port(
-		--GENERAL--
+		-- GENERAL-- 
 		CLK		 	: in std_logic;
 		RESET	 	: in std_logic;
 
@@ -11,14 +11,14 @@ entity fsm is
 		KEY_DONE 	: in std_logic;
 	
 				
-		--INPUTS--
+		-- INPUTS-- 
 		COL_ON 		: in std_logic;
 		ROW_ON 		: in std_logic;
 		DIG_ON		: in std_logic;
 		
-		--OUTPUTS--
+		-- OUTPUTS-- 
 		
-		----DELAY_CNT 	: out std_logic;  this will always be high!! We don't need to disable the counting only reset it! 
+		-- -- DELAY_CNT 	: out std_logic;  this will always be high!! We don't need to disable the counting only reset it! 
 		DELAY_RST 	: out std_logic;
 		KEY_CNT		: out std_logic;
 		KEY_RST		: out std_logic;
@@ -30,9 +30,9 @@ entity fsm is
 		ADDR_OE 	: out std_logic;
 		REG_OE 		: out std_logic;
 		DIG_EN 		: out std_logic
-												--for the moment im going to tie REG_OE and DIG_OE together
-												--but I should know that for when im writing from an EEPROM DIG_OE has to be
-												--a seperate control signal (so no 2 devices are accessing the data bus of the RAM
+												-- for the moment im going to tie REG_OE and DIG_OE together
+												-- but I should know that for when im writing from an EEPROM DIG_OE has to be
+												-- a seperate control signal (so no 2 devices are accessing the data bus of the RAM
 
 	);
 end entity;
@@ -106,7 +106,7 @@ begin
 				ROW_EN 		<= '0';
 				DIG_EN 		<= '0';
 				REG_OE 		<= '0';
-				--DELAY_CNT 	<= '1';
+				-- DELAY_CNT 	<= '1';
 				DELAY_RST 	<= '0';
 				KEY_CNT		<= '0';
 				KEY_RST		<= '0';
@@ -120,7 +120,7 @@ begin
 				ROW_EN 		<= '0';
 				DIG_EN 		<= '0';
 				REG_OE 		<= '0';
-				--DELAY_CNT 	<= '0';
+				-- DELAY_CNT 	<= '0';
 				DELAY_RST 	<= '0';
 				KEY_CNT		<= '1';
 				KEY_RST		<= '0';
@@ -134,7 +134,7 @@ begin
 				ROW_EN 		<= '1';
 				DIG_EN 		<= '0';
 				REG_OE 		<= '0';
-				--DELAY_CNT 	<= '0';
+				-- DELAY_CNT 	<= '0';
 				DELAY_RST 	<= '0';
 				KEY_CNT		<= '1';
 				KEY_RST		<= '0';
@@ -148,7 +148,7 @@ begin
 				ROW_EN 		<= '0';
 				DIG_EN 		<= '1';
 				REG_OE 		<= '0';
-				--DELAY_CNT 	<= '0';
+				-- DELAY_CNT 	<= '0';
 				DELAY_RST 	<= '0';
 				KEY_CNT		<= '1';
 				KEY_RST		<= '0';
@@ -162,7 +162,7 @@ begin
 				ROW_EN 		<= '0';
 				DIG_EN 		<= '0';
 				REG_OE 		<= '0';
-				--DELAY_CNT 	<= '0';
+				-- DELAY_CNT 	<= '0';
 				DELAY_RST 	<= '0';
 				KEY_CNT		<= '0';
 				KEY_RST		<= '1';
@@ -176,7 +176,7 @@ begin
 				ROW_EN 		<= '0';
 				DIG_EN 		<= '0';
 				REG_OE 		<= '0';
-				--DELAY_CNT 	<= '0';
+				-- DELAY_CNT 	<= '0';
 				DELAY_RST 	<= '1';
 				KEY_CNT		<= '0';
 				KEY_RST		<= '0';
@@ -190,7 +190,7 @@ begin
 				ROW_EN 		<= '0';
 				DIG_EN 		<= '0';
 				REG_OE 		<= '1';
-				--DELAY_CNT 	<= '0';
+				-- DELAY_CNT 	<= '0';
 				DELAY_RST 	<= '0';
 				KEY_CNT		<= '0';
 				KEY_RST		<= '1';
@@ -204,7 +204,7 @@ begin
 				ROW_EN 		<= '0';
 				DIG_EN 		<= '0';
 				REG_OE 		<= '0';
-				--DELAY_CNT 	<= '0';
+				-- DELAY_CNT 	<= '0';
 				DELAY_RST 	<= '0';
 				KEY_CNT		<= '0';
 				KEY_RST		<= '0';
@@ -229,7 +229,7 @@ end logic;
 	-- -- Logic to advance to the next state
 	-- process (CLK, RESET)
 	-- begin
-		-- --complete reset
+		-- -- complete reset
 		-- if RESET = '1' then
 			-- state <= s0;
 		-- elsif (rising_edge(CLK)) then
@@ -288,7 +288,7 @@ end logic;
 				-- ROW_EN 		<= '0';
 				-- DIG_EN 		<= '0';
 				-- REG_OE 		<= '0';
-				-- --DELAY_CNT 	<= '1';
+				-- -- DELAY_CNT 	<= '1';
 				-- DELAY_RST 	<= '0';
 				-- KEY_CNT		<= '0';
 				-- KEY_RST		<= '0';
@@ -302,7 +302,7 @@ end logic;
 				-- ROW_EN 		<= '0';
 				-- DIG_EN 		<= '0';
 				-- REG_OE 		<= '0';
-				-- --DELAY_CNT 	<= '0';
+				-- -- DELAY_CNT 	<= '0';
 				-- DELAY_RST 	<= '0';
 				-- KEY_CNT		<= '1';
 				-- KEY_RST		<= '0';
@@ -316,7 +316,7 @@ end logic;
 				-- ROW_EN 		<= '1';
 				-- DIG_EN 		<= '0';
 				-- REG_OE 		<= '0';
-				-- --DELAY_CNT 	<= '0';
+				-- -- DELAY_CNT 	<= '0';
 				-- DELAY_RST 	<= '0';
 				-- KEY_CNT		<= '1';
 				-- KEY_RST		<= '0';
@@ -330,7 +330,7 @@ end logic;
 				-- ROW_EN 		<= '0';
 				-- DIG_EN 		<= '1';
 				-- REG_OE 		<= '0';
-				-- --DELAY_CNT 	<= '0';
+				-- -- DELAY_CNT 	<= '0';
 				-- DELAY_RST 	<= '0';
 				-- KEY_CNT		<= '1';
 				-- KEY_RST		<= '0';
@@ -344,7 +344,7 @@ end logic;
 				-- ROW_EN 		<= '0';
 				-- DIG_EN 		<= '0';
 				-- REG_OE 		<= '0';
-				-- --DELAY_CNT 	<= '0';
+				-- -- DELAY_CNT 	<= '0';
 				-- DELAY_RST 	<= '0';
 				-- KEY_CNT		<= '0';
 				-- KEY_RST		<= '1';
@@ -358,7 +358,7 @@ end logic;
 				-- ROW_EN 		<= '0';
 				-- DIG_EN 		<= '0';
 				-- REG_OE 		<= '0';
-				-- --DELAY_CNT 	<= '0';
+				-- -- DELAY_CNT 	<= '0';
 				-- DELAY_RST 	<= '1';
 				-- KEY_CNT		<= '0';
 				-- KEY_RST		<= '0';
@@ -372,7 +372,7 @@ end logic;
 				-- ROW_EN 		<= '0';
 				-- DIG_EN 		<= '0';
 				-- REG_OE 		<= '1';
-				-- --DELAY_CNT 	<= '0';
+				-- -- DELAY_CNT 	<= '0';
 				-- DELAY_RST 	<= '0';
 				-- KEY_CNT		<= '0';
 				-- KEY_RST		<= '1';
@@ -386,7 +386,7 @@ end logic;
 				-- ROW_EN 		<= '0';
 				-- DIG_EN 		<= '0';
 				-- REG_OE 		<= '0';
-				-- --DELAY_CNT 	<= '0';
+				-- -- DELAY_CNT 	<= '0';
 				-- DELAY_RST 	<= '0';
 				-- KEY_CNT		<= '0';
 				-- KEY_RST		<= '0';
@@ -400,7 +400,7 @@ end logic;
 				-- ROW_EN 		<= '0';
 				-- DIG_EN 		<= '0';
 				-- REG_OE 		<= '0';
-				-- --DELAY_CNT 	<= '0';
+				-- -- DELAY_CNT 	<= '0';
 				-- DELAY_RST 	<= '0';
 				-- KEY_CNT		<= '0';
 				-- KEY_RST		<= '0';

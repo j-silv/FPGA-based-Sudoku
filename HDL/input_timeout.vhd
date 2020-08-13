@@ -17,7 +17,7 @@ begin
 	process(clk,rst)
 		variable tick : integer := 0;
 	begin
-		--if the FSM restarts the delay, make sure that the delay done signal is not active
+		-- if the FSM restarts the delay, make sure that the delay done signal is not active
 		if rst = '1' then
 			tick := 0;
 			done <= '0';
@@ -25,7 +25,7 @@ begin
 			tick := tick + 1;
 				if tick = MAX_CLK_CYCLES then
 					done <= '1';
-					--reset tick because otherwise it will continue counting behind MAX_CLK_CYCLES
+					-- reset tick because otherwise it will continue counting behind MAX_CLK_CYCLES
 					tick := 0;
 				else 
 					done <= '0';

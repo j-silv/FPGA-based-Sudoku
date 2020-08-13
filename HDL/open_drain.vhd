@@ -1,8 +1,8 @@
---std_logic libraries
+-- std_logic libraries
 library ieee;
 use ieee.std_logic_1164.all;
 
---library for the open drain altera primitive
+-- library for the open drain altera primitive
 library altera; 
 use altera.altera_primitives_components.all;
 
@@ -15,9 +15,9 @@ end open_drain;
 
 architecture logic of open_drain is
 begin
-	--generate a bus containing open drain primitives
+	-- generate a bus containing open drain primitives
 	gen_opndrn_bus : for i in 0 to 8 generate
-		--generate an instance of opndrn for each signal bit
+		-- generate an instance of opndrn for each signal bit
 		instance : OPNDRN
 			port map (a_in => d(i), a_out => q(i));
 	end generate gen_opndrn_bus;
