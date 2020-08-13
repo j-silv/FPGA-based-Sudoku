@@ -1,3 +1,19 @@
+--------------------------------------------------------------------
+-- timeout (counter) for user keyboard input
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+-- if 3 distinct keyboard inputs are not detected within
+-- an alloted timeframe, then the FSM ignores the attempt
+-- to write to memory and the system returns to its initial state
+
+-- this is done to avoid moments where the user inputs a certain
+-- position or digit by mistake and is forced to continue
+-- the input process
+-- with this feature, the player just has to wait until the system
+-- resets and then choose the correct inputs
+--------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 	

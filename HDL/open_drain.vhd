@@ -1,3 +1,13 @@
+--------------------------------------------------------------------
+-- open_drain bus built from opnndrn primitives
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+-- this is connected to the column selection outputs
+-- these open drain components will thus source current from the
+-- common cathode LED digits
+--------------------------------------------------------------------
+
 -- std_logic libraries
 library ieee;
 use ieee.std_logic_1164.all;

@@ -1,8 +1,12 @@
+--------------------------------------------------------------------
 -- single port synchronous RAM module 
+--------------------------------------------------------------------
 
+--------------------------------------------------------------------
 -- The RAM has addresses corresponding to row and column positions 
 -- where the memory at these addresses is LED segment data 
 -- for displaying a certain digit.
+--------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;

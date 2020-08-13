@@ -1,3 +1,12 @@
+--------------------------------------------------------------------
+-- LED segment encoder
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+-- the keyboard data is encoded in binary to represent 
+-- LED digit values
+--------------------------------------------------------------------
+
 library ieee;
 use ieee.numeric_std.all, 
 	ieee.std_logic_1164.all;
@@ -10,7 +19,8 @@ entitY ledseg_encoder is
 end entity ledseg_encoder;
 
 architecture comCathode of ledseg_encoder is
-	-- LED segment data for clearing and displaying numerical digits 1-9 (common cathode 7 segment display)
+	-- this array contains the associated LED segment data in hexadecimal for
+	-- clearing and displaying numerical digits 1-9 for a common cathode 7 segment display
 	-- order of segments = A,B,C,D,E,F,G,DP
 	type SEG_DATA is array (0 to 9) of std_logic_vector (7 downto 0);
 	constant DISPLAY_DIGIT : SEG_DATA:=(

@@ -1,8 +1,15 @@
+--------------------------------------------------------------------
 -- parallel in, parallel out 8-stage 8-bit shift register
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+-- Takes the LED segment data coming from RAM and shifts it 
+-- along to align with each associated row of the LED matrix
 
 -- data is parallel shifted from the bottom to the top
 -- the first row LED segment data is shifted through to the last stage shift register
 -- the last stage shift register will be thus connected to the first row of the LED matrix
+--------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
