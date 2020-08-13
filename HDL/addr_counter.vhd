@@ -7,7 +7,7 @@ entity addr_counter is
 		CLK,CNT_EN : in std_logic;
 		Q : out std_logic_vector(7 downto 0) 
 	);
-end entity addr_counter_v02;
+end entity addr_counter;
 
 architecture logic of addr_counter is 
 	signal temp_Q : std_logic_vector(7 downto 0):=x"00";
