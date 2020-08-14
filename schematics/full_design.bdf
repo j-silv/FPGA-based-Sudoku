@@ -1463,12 +1463,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "keyboard_in[9..0]" (rect 136 360 265 376)(font "Arial" ))
-	(pt 256 368)
-	(pt 248 368)
-	(bus)
-)
-(connector
 	(text "INV_CLK" (rect 184 328 250 344)(font "Arial" ))
 	(pt 256 336)
 	(pt 248 336)
@@ -1785,6 +1779,12 @@ agreement for further details.
 	(text "NOT_RESET" (rect 104 192 201 208)(font "Arial" ))
 	(pt 104 208)
 	(pt 144 208)
+)
+(connector
+	(text "keyboard_in[9..0]" (rect 128 360 257 376)(font "Arial" ))
+	(pt 256 368)
+	(pt 240 368)
+	(bus)
 )
 (junction (pt 544 336))
 (junction (pt 1176 8))
