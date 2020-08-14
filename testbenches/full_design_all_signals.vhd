@@ -1,3 +1,16 @@
+--------------------------------------------------------------------
+-- VHDL testbench for Sudoku design
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+-- this testbench simulates what occurs in the device 
+-- after a user inputs column/row/digit data
+-- from the keyboard to the Sudoku game grid
+
+-- another aspect of this simulation tests the continous updating
+-- of the LED digit matrix with content from the RAM
+--------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -93,14 +106,14 @@ architecture bench of full_design_all_signals is
 		signal row_7 :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 		signal row_8 :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 		
-		--input clock for the PLL
+		-- simulation information
 		constant SYS_CLK_FREQ : integer := 50E+6;
 		constant SYS_CLK_T : time := 20 ns;
 		constant STOP_SIMULATION_TIME : integer := 10; --(ns)
 		constant NUM_CLK_CYCLES : integer := 30000;
 
-		
-		signal i : integer := 0; -- loop variable
+		-- loop variable
+		signal i : integer := 0;
 		
 begin
 
@@ -147,23 +160,22 @@ begin
 			 row_8 => row_8);
 
 	
-	--reset the FSM and shift register to initial state
+	-- reset the FSM and shift register to initial state
 	FSM_RST <= '1', '0' after 11 us;
 	SHIFT_RST <= '1', '0' after 11 us;
-	--here we would want to reset registers as well !!
 	
-	--input (ON) signals from the keyboard
+	-- input (ON) signals from the keyboard
 	COL_ON <= '0', '1' after 30 us, '0' after  60 us;
 	ROW_ON <= '0', '1' after 90 us, '0' after 120 us;
 	DIG_ON <= '0', '1' after 150 us, '0' after 180 us;
 	
-	--input signals from the keyboard
+	-- input signals from the keyboard
 	keyboard_in <=  "0000000000", 
 					"0000000100" after 30 us,  "0000000000" after 60 us,
 					"0000000100" after 90 us,  "0000000000" after 120 us,
 					"0000100000" after 150 us, "0000000000" after 180 us;
 
-	--continuous system (in) clock 
+	-- continuous system (in) clock 
 	process 
 	begin
 		SYS_CLK <= '0';
@@ -171,7 +183,7 @@ begin
 		SYS_CLK <= '1';
 		wait for (SYS_CLK_T)/2;
 		
-		--stop simulation
+		-- stop simulation
 		if i = NUM_CLK_CYCLES then
             wait;
         else
@@ -179,4 +191,3 @@ begin
         end if;
 	end process;
 end bench;
-
