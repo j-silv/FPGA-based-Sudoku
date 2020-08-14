@@ -26,7 +26,7 @@ entity input_timeout is
 end entity input_timeout;
 
 architecture logic of input_timeout is 
-	constant CLK_FREQ : integer := 100E+6;
+	constant CLK_FREQ : integer := 10E+3;
 	constant DELAY : integer := 5;
 	constant MAX_CLK_CYCLES : integer := CLK_FREQ*DELAY;
 begin
