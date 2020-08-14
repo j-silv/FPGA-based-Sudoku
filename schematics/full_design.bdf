@@ -614,36 +614,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 616 -120 744 -40)
-	(text "input_timeout" (rect 23 0 123 16)(font "Arial" ))
-	(text "inst7" (rect 85 64 120 80)(font "Arial" ))
-	(port
-		(pt 128 32)
-		(input)
-		(text "clk" (rect 0 0 20 16)(font "Arial" ))
-		(text "clk" (rect 87 27 107 43)(font "Arial" ))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(port
-		(pt 128 48)
-		(input)
-		(text "rst" (rect 0 0 18 16)(font "Arial" ))
-		(text "rst" (rect 89 43 107 59)(font "Arial" ))
-		(line (pt 128 48)(pt 112 48))
-	)
-	(port
-		(pt 0 32)
-		(output)
-		(text "done" (rect 0 0 37 16)(font "Arial" ))
-		(text "done" (rect 15 27 52 43)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 64))
-	)
-	(flipy)
-)
-(symbol
 	(rect 888 -120 1016 -40)
 	(text "key_counter" (rect 5 0 97 16)(font "Arial" ))
 	(text "inst9" (rect 8 64 43 80)(font "Arial" ))
@@ -1207,6 +1177,36 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 184 192))
 	)
+)
+(symbol
+	(rect 616 -120 744 -40)
+	(text "input_timeout" (rect 23 0 123 16)(font "Arial" ))
+	(text "inst7" (rect 85 64 120 80)(font "Arial" ))
+	(port
+		(pt 128 32)
+		(input)
+		(text "clk" (rect 0 0 20 16)(font "Arial" ))
+		(text "clk" (rect 87 27 107 43)(font "Arial" ))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(port
+		(pt 128 48)
+		(input)
+		(text "rst" (rect 0 0 18 16)(font "Arial" ))
+		(text "rst" (rect 89 43 107 59)(font "Arial" ))
+		(line (pt 128 48)(pt 112 48))
+	)
+	(port
+		(pt 0 32)
+		(output)
+		(text "done" (rect 0 0 37 16)(font "Arial" ))
+		(text "done" (rect 21 27 52 43)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 64))
+	)
+	(flipy)
 )
 (connector
 	(pt 888 -72)

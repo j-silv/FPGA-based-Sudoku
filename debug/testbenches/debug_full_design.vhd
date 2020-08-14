@@ -6,7 +6,7 @@ entity debug_full_design is
 end;
 
 architecture bench of debug_full_design is
-	component schema_v09 
+	component full_design 
 		PORT
 		(
 			ROW_ON :  IN  STD_LOGIC;
@@ -15,6 +15,14 @@ architecture bench of debug_full_design is
 			SYS_CLK :  IN  STD_LOGIC;
 			RESET :  IN  STD_LOGIC;
 			keyboard_in :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+			DELAY_RST :  OUT  STD_LOGIC;
+			KEY_CNT :  OUT  STD_LOGIC;
+			KEY_RST :  OUT  STD_LOGIC;
+			ADDR_CNT :  OUT  STD_LOGIC;
+			SHIFT_EN :  OUT  STD_LOGIC;
+			RAM_WR :  OUT  STD_LOGIC;
+			REG_OE :  OUT  STD_LOGIC;
+			addr_decoder :  OUT  STD_LOGIC_VECTOR(8 TO 8);
 			column_select :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
 			row_0 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
 			row_1 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -34,6 +42,14 @@ architecture bench of debug_full_design is
 			signal SYS_CLK :    STD_LOGIC;
 			signal RESET :    STD_LOGIC;
 			signal keyboard_in :    STD_LOGIC_VECTOR(9 DOWNTO 0);
+			signal DELAY_RST :    STD_LOGIC;
+			signal KEY_CNT :    STD_LOGIC;
+			signal KEY_RST :    STD_LOGIC;
+			signal ADDR_CNT :    STD_LOGIC;
+			signal SHIFT_EN :    STD_LOGIC;
+			signal RAM_WR :    STD_LOGIC;
+			signal REG_OE :    STD_LOGIC;
+			signal addr_decoder :    STD_LOGIC_VECTOR(8 TO 8);
 			signal column_select :    STD_LOGIC_VECTOR(8 DOWNTO 0);
 			signal row_0 :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 			signal row_1 :    STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -56,13 +72,21 @@ architecture bench of debug_full_design is
 		
 begin
 
-	comp : schema_v09
+	comp : full_design
 	port map(ROW_ON => ROW_ON, 
 			 COL_ON => COL_ON, 
 			 DIG_ON => DIG_ON, 
 			 SYS_CLK => SYS_CLK,
 			 RESET => RESET,
 			 keyboard_in => keyboard_in, 
+			 DELAY_RST => DELAY_RST,
+			 KEY_CNT => KEY_CNT,
+			 KEY_RST => KEY_RST,
+			 ADDR_CNT => ADDR_CNT,
+			 SHIFT_EN => SHIFT_EN,
+			 RAM_WR => RAM_WR,
+			 REG_OE => REG_OE,
+			 addr_decoder => addr_decoder,
 			 column_select => column_select, 
 			 row_0 => row_0, 
 			 row_1 => row_1, 
