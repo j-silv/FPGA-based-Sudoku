@@ -1359,36 +1359,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 616 -120 744 -40)
-	(text "input_timeout" (rect 23 0 123 16)(font "Arial" ))
-	(text "inst7" (rect 85 64 120 80)(font "Arial" ))
-	(port
-		(pt 128 32)
-		(input)
-		(text "clk" (rect 0 0 20 16)(font "Arial" ))
-		(text "clk" (rect 87 27 107 43)(font "Arial" ))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(port
-		(pt 128 48)
-		(input)
-		(text "rst" (rect 0 0 18 16)(font "Arial" ))
-		(text "rst" (rect 89 43 107 59)(font "Arial" ))
-		(line (pt 128 48)(pt 112 48))
-	)
-	(port
-		(pt 0 32)
-		(output)
-		(text "done" (rect 0 0 37 16)(font "Arial" ))
-		(text "done" (rect 21 27 58 43)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 64))
-	)
-	(flipy)
-)
-(symbol
 	(rect 0 -96 320 96)
 	(text "pll" (rect 151 0 173 23)(font "Arial" (font_size 10)))
 	(text "inst" (rect 8 172 33 188)(font "Arial" ))
@@ -1447,6 +1417,47 @@ agreement for further details.
 		(line (pt 319 72)(pt 287 72))
 		(line (pt 319 96)(pt 287 96))
 	)
+)
+(symbol
+	(rect 616 -120 744 -40)
+	(text "input_timeout" (rect 23 0 123 16)(font "Arial" ))
+	(text "inst19" (rect 76 64 120 80)(font "Arial" ))
+	(port
+		(pt 128 32)
+		(input)
+		(text "clk" (rect 0 0 20 16)(font "Arial" ))
+		(text "clk" (rect 87 27 107 43)(font "Arial" ))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(port
+		(pt 128 48)
+		(input)
+		(text "rst" (rect 0 0 18 16)(font "Arial" ))
+		(text "rst" (rect 89 43 107 59)(font "Arial" ))
+		(line (pt 128 48)(pt 112 48))
+	)
+	(port
+		(pt 0 32)
+		(output)
+		(text "done" (rect 0 0 37 16)(font "Arial" ))
+		(text "done" (rect 15 27 52 43)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(parameter
+		"CLK_FREQ"
+		"10000"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"TIMEOUT"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 112 64))
+	)
+	(flipy)
+	(annotation_block (parameter)(rect 568 -216 840 -152))
 )
 (connector
 	(pt 888 -72)

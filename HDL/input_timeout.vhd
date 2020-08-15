@@ -18,6 +18,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 	
 entity input_timeout is 
+	generic(
+		CLK_FREQ : integer := 10E+3;
+		TIMEOUT : integer := 5
+	);
 	port(
 		clk		: in std_logic;
 		rst		: in std_logic;	
@@ -26,9 +30,7 @@ entity input_timeout is
 end entity input_timeout;
 
 architecture logic of input_timeout is 
-	constant CLK_FREQ : integer := 10E+3;
-	constant DELAY : integer := 5;
-	constant MAX_CLK_CYCLES : integer := CLK_FREQ*DELAY;
+	constant MAX_CLK_CYCLES : integer := CLK_FREQ*TIMEOUT;
 begin
 	process(clk,rst)
 		variable tick : integer := 0;

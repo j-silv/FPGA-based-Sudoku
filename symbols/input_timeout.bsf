@@ -45,7 +45,18 @@ agreement for further details.
 		(text "done" (rect 89 27 107 39)(font "Arial" ))
 		(line (pt 128 32)(pt 112 32)(line_width 1))
 	)
+	(parameter
+		"CLK_FREQ"
+		"10000"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"TIMEOUT"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 112 64)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 144 -64 244 16))
 )
