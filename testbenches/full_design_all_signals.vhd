@@ -25,9 +25,8 @@ architecture bench of full_design_all_signals is
 			ROW_ON :  IN  STD_LOGIC;
 			COL_ON :  IN  STD_LOGIC;
 			DIG_ON :  IN  STD_LOGIC;
-			FSM_RST :  IN  STD_LOGIC;
 			SYS_CLK :  IN  STD_LOGIC;
-			SHIFT_RST :  IN  STD_LOGIC;
+			RESET :  IN  STD_LOGIC;
 			keyboard_in :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 			DELAY_RST :  OUT  STD_LOGIC;
 			KEY_CNT :  OUT  STD_LOGIC;
@@ -35,17 +34,17 @@ architecture bench of full_design_all_signals is
 			ADDR_CNT :  OUT  STD_LOGIC;
 			SHIFT_EN :  OUT  STD_LOGIC;
 			RAM_WR :  OUT  STD_LOGIC;
+			REG_OE :  OUT  STD_LOGIC;
 			ROW_EN :  OUT  STD_LOGIC;
 			COL_EN :  OUT  STD_LOGIC;
-			REG_OE :  OUT  STD_LOGIC;
 			DIG_EN :  OUT  STD_LOGIC;
 			DELAY_DONE :  OUT  STD_LOGIC;
 			KEY_DONE :  OUT  STD_LOGIC;
 			SHIFT_OUT :  OUT  STD_LOGIC;
 			INV_CLK :  OUT  STD_LOGIC;
 			CLK :  OUT  STD_LOGIC;
-			addr_decoder :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
 			column_select :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
+			decode_in :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
 			encoded_ledseg :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
 			encoded_position :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0);
 			keyboard_out :  OUT  STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -68,8 +67,7 @@ architecture bench of full_design_all_signals is
 		signal ROW_ON :    STD_LOGIC;
 		signal COL_ON :    STD_LOGIC;
 		signal DIG_ON :    STD_LOGIC;
-		signal FSM_RST :    STD_LOGIC;
-		signal SYS_CLK :    STD_LOGIC;
+		signal RESET  :    STD_LOGIC;
 		signal SHIFT_RST :    STD_LOGIC;
 		signal keyboard_in :    STD_LOGIC_VECTOR(9 DOWNTO 0);
 		signal DELAY_RST :    STD_LOGIC;
@@ -87,7 +85,7 @@ architecture bench of full_design_all_signals is
 		signal SHIFT_OUT :    STD_LOGIC;
 		signal INV_CLK :    STD_LOGIC;
 		signal CLK :    STD_LOGIC;
-		signal addr_decoder :  STD_LOGIC_VECTOR(8 DOWNTO 0);
+		signal decode_in :  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		signal column_select :    STD_LOGIC_VECTOR(8 DOWNTO 0);
 		signal encoded_ledseg :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 		signal encoded_position :    STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -121,9 +119,8 @@ begin
 	port map(ROW_ON => ROW_ON, 
 			 COL_ON => COL_ON, 
 			 DIG_ON => DIG_ON,  
-			 FSM_RST => FSM_RST, 
+			 RESET => RESET, 
 			 SYS_CLK => SYS_CLK, 
-			 SHIFT_RST => SHIFT_RST,
 			 keyboard_in => keyboard_in, 
 			 DELAY_RST =>  DELAY_RST, 
 			 KEY_CNT => KEY_CNT, 
@@ -140,7 +137,7 @@ begin
 			 SHIFT_OUT => SHIFT_OUT, 
 			 INV_CLK => INV_CLK, 
 			 CLK => CLK, 
-			 addr_decoder => addr_decoder,
+			 decode_in => decode_in,
 			 column_select => column_select, 
 			 encoded_ledseg => encoded_ledseg, 
 			 encoded_position => encoded_position, 
@@ -160,9 +157,8 @@ begin
 			 row_8 => row_8);
 
 	
-	-- reset the FSM and shift register to initial state
-	FSM_RST <= '1', '0' after 11 us;
-	SHIFT_RST <= '1', '0' after 11 us;
+	-- reset the FSM and input registers
+	RESET <= '0', '1' after 11 us;
 	
 	-- input (ON) signals from the keyboard
 	COL_ON <= '0', '1' after 30 us, '0' after  60 us;
@@ -170,6 +166,7 @@ begin
 	DIG_ON <= '0', '1' after 150 us, '0' after 180 us;
 	
 	-- input signals from the keyboard
+	-- tests inputting the 3rd column, 3rd row, and the number 5 to the Sudoku grid  
 	keyboard_in <=  "0000000000", 
 					"0000000100" after 30 us,  "0000000000" after 60 us,
 					"0000000100" after 90 us,  "0000000000" after 120 us,
