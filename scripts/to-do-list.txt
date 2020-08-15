@@ -1,0 +1,8 @@
+- Script that switches between PLL output clock frequencies
+	- Remove old PLL clock from project files
+	- Add new PLL clock from project files
+	- Update PLL symbol in top-level schematic entity
+	- Generate updated HDL file from top-level schematic entity
+- Script that takes .vhd files generated in project directory and puts them in HDL folder
+- Script that takes .bsf files generated in HDL folder and puts them in symbols folder
+- Script that takes .vhd files generated in schematic folder and puts them in HDL folder
