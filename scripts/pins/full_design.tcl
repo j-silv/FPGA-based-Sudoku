@@ -136,7 +136,7 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to RESET
 #USER_LED_4 corresponds to ADDR_CNT
 #USER_LED_5 corresponds to SHIFT_EN
 #USER_LED_6 corresponds to RAM_WR
-#USER_LED_7 corresponds to ADDR_OE (addr_decoder[8])
+#USER_LED_7 corresponds to ADDR_OE (decode_in[8])
 #USER_LED_8 corresponds to REG_OE
 
 set_location_assignment PIN_M2 -to DELAY_RST
@@ -145,7 +145,7 @@ set_location_assignment PIN_R2 -to KEY_RST
 set_location_assignment PIN_T1 -to ADDR_CNT
 set_location_assignment PIN_V4 -to SHIFT_EN
 set_location_assignment PIN_T6 -to RAM_WR
-set_location_assignment PIN_AB4 -to addr_decoder[8]
+set_location_assignment PIN_AB4 -to decode_in[8]
 set_location_assignment PIN_AA5 -to REG_OE
 
 
@@ -157,5 +157,5 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY_RST
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADDR_CNT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SHIFT_EN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RAM_WR
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to addr_decoder[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to decode_in[8]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to REG_OE

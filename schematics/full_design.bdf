@@ -411,6 +411,23 @@ agreement for further details.
 	)
 	(annotation_block (location)(rect 1656 1040 1744 1064))
 )
+(pin
+	(output)
+	(rect 1720 608 1912 624)
+	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
+	(text "decode_in[8]" (rect 90 0 186 16)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1759 1024 1839 1048))
+)
 (symbol
 	(rect 56 192 104 224)
 	(text "NOT" (rect 1 0 30 15)(font "Arial" (font_size 6)))
