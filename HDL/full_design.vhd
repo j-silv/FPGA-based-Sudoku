@@ -15,7 +15,7 @@
 
 -- PROGRAM		"Quartus II 64-Bit"
 -- VERSION		"Version 15.0.0 Build 145 04/22/2015 SJ Web Edition"
--- CREATED		"Sat Aug 15 09:45:27 2020"
+-- CREATED		"Sat Aug 15 09:49:27 2020"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
