@@ -24,8 +24,8 @@ LIBRARY work;
 
 ENTITY full_design IS 
 	GENERIC(
-		CLK_FREQ : INTEGER := 10E+3;
-		TIMEOUT : INTEGER := 5
+		CLK_FREQ : INTEGER := 100E+3; -- (Hz)
+		TIMEOUT : INTEGER := 5000 -- (ms)
 	);
 	PORT
 	(

@@ -12,11 +12,15 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity full_design_all_signals is
+entity test_input_timeout is
 end;
 
-architecture bench of full_design_all_signals is
+architecture bench of test_input_timeout is
 	component full_design 
+		GENERIC(
+			CLK_FREQ : INTEGER;
+			TIMEOUT : INTEGER
+		);
 		PORT
 		(
 			ROW_ON :  IN  STD_LOGIC;
@@ -103,14 +107,19 @@ architecture bench of full_design_all_signals is
 		
 		-- simulation information
 		constant SYS_CLK_T : time := 20 ns; -- 50 MHz SYS_CLK
-		constant STOP_SIMULATION_TIME : time := 1000 us;
+		constant STOP_SIMULATION_TIME : time := 1500 us;
 
-		-- loop variable
-		signal i : integer := 0;
+		-- input_timeout parameter information
+		constant SYS_CLK_FREQ : integer := 100E+3; -- (Hz)
+		constant TIMEOUT : integer := 1; -- (ms) 
+		-- for simulation purposes, 1000 us is the timeout requested
 		
 begin
 
 	comp : full_design 
+	generic map (CLK_FREQ => SYS_CLK_FREQ,
+				 TIMEOUT => TIMEOUT)
+				 
 	port map(ROW_ON => ROW_ON, 
 			 COL_ON => COL_ON, 
 			 DIG_ON => DIG_ON,  
@@ -163,7 +172,7 @@ begin
 	-- input signal from the keyboard
 	-- tests inputting the 3rd column to the Sudoku grid, and waiting for timeout delay
 	keyboard_in <=  "0000000000", 
-					"0000000100" after 30 us,  "0000000000" after 60 us,
+					"0000000100" after 30 us,  "0000000000" after 60 us;
 
 	-- continuous system (in) clock 
 	process 
