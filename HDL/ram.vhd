@@ -34,7 +34,7 @@ architecture logic of ram is
 	-- initalize memory with .mif
 	attribute ram_init_file : string;
 	attribute ram_init_file of ram :
-	signal is "C:\Users\idontseeit\Desktop\Justins_Files\electronics\Projects\sudoku\quartus\git\FPGA-based-Sudoku\memory_initialization\ram.mif";
+	signal is "C:\Users\idontseeit\Desktop\Justins_Files\electronics\Projects\sudoku\git\FPGA-based-Sudoku\memory_initialization\ram.mif";
 
 begin
 	process(CLK)

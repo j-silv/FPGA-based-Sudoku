@@ -44,21 +44,17 @@ begin
 	-- by including the 9th bit, we can avoid the position register turning on a random column
 	-- during the RAM write cycle
 	
-	-- We are using open drain outputs and common cathode LED segments, so it would be logical
-	-- that a coulumn will be turned "on" when the corresponding bit is set high
-	
-	-- however, the open drain primitive is synthesized as a tristate buffer
-	-- that has its input connected to ground and the output enable signal is inverted
-	-- thus the bit actually has to be set LOW to turn on a column
+	-- with the external LED driver, the pins are set HIGH so that the appropiate column is turned on
+	-- (common cathode)
 	with D(8 downto 0) select
-	COL_SEL <=  "111111110" when 9x"112" | 9x"113" | 9x"114" | 9x"115" | 9x"116" | 9x"117" | 9x"118",
-				"111111101" when 9x"122" | 9x"123" | 9x"124" | 9x"125" | 9x"126" | 9x"127" | 9x"128",
-				"111111011" when 9x"132" | 9x"133" | 9x"134" | 9x"135" | 9x"136" | 9x"137" | 9x"138",
-				"111110111" when 9x"142" | 9x"143" | 9x"144" | 9x"145" | 9x"146" | 9x"147" | 9x"148",
-				"111101111" when 9x"152" | 9x"153" | 9x"154" | 9x"155" | 9x"156" | 9x"157" | 9x"158",
-				"111011111" when 9x"162" | 9x"163" | 9x"164" | 9x"165" | 9x"166" | 9x"167" | 9x"168",
-				"110111111" when 9x"172" | 9x"173" | 9x"174" | 9x"175" | 9x"176" | 9x"177" | 9x"178",
-				"101111111" when 9x"182" | 9x"183" | 9x"184" | 9x"185" | 9x"186" | 9x"187" | 9x"188",
-				"011111111" when 9x"102" | 9x"103" | 9x"104" | 9x"105" | 9x"106" | 9x"107" | 9x"108",
-				"111111111" when others;			
+	COL_SEL <=  "000000001" when 9x"112" | 9x"113" | 9x"114" | 9x"115" | 9x"116" | 9x"117" | 9x"118",
+				"000000010" when 9x"122" | 9x"123" | 9x"124" | 9x"125" | 9x"126" | 9x"127" | 9x"128",
+				"000000100" when 9x"132" | 9x"133" | 9x"134" | 9x"135" | 9x"136" | 9x"137" | 9x"138",
+				"000001000" when 9x"142" | 9x"143" | 9x"144" | 9x"145" | 9x"146" | 9x"147" | 9x"148",
+				"000010000" when 9x"152" | 9x"153" | 9x"154" | 9x"155" | 9x"156" | 9x"157" | 9x"158",
+				"000100000" when 9x"162" | 9x"163" | 9x"164" | 9x"165" | 9x"166" | 9x"167" | 9x"168",
+				"001000000" when 9x"172" | 9x"173" | 9x"174" | 9x"175" | 9x"176" | 9x"177" | 9x"178",
+				"010000000" when 9x"182" | 9x"183" | 9x"184" | 9x"185" | 9x"186" | 9x"187" | 9x"188",
+				"100000000" when 9x"102" | 9x"103" | 9x"104" | 9x"105" | 9x"106" | 9x"107" | 9x"108",
+				"000000000" when others;			
 end cathode;

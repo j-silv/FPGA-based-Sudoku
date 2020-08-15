@@ -72,10 +72,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[0]
 
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to column_select[2]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to column_select[1]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to column_select[0]
-
 set_location_assignment PIN_N14 -to SYS_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SYS_CLK
 
