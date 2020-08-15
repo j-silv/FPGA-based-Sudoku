@@ -19,7 +19,7 @@ entity full_design_all_signals is
 end;
 
 architecture bench of full_design_all_signals is
-	component schema_v08 
+	component full_design 
 		PORT
 		(
 			ROW_ON :  IN  STD_LOGIC;
@@ -67,8 +67,8 @@ architecture bench of full_design_all_signals is
 		signal ROW_ON :    STD_LOGIC;
 		signal COL_ON :    STD_LOGIC;
 		signal DIG_ON :    STD_LOGIC;
+		signal SYS_CLK : STD_LOGIC;
 		signal RESET  :    STD_LOGIC;
-		signal SHIFT_RST :    STD_LOGIC;
 		signal keyboard_in :    STD_LOGIC_VECTOR(9 DOWNTO 0);
 		signal DELAY_RST :    STD_LOGIC;
 		signal KEY_CNT :    STD_LOGIC;
@@ -115,7 +115,7 @@ architecture bench of full_design_all_signals is
 		
 begin
 
-	comp : schema_v08 
+	comp : full_design 
 	port map(ROW_ON => ROW_ON, 
 			 COL_ON => COL_ON, 
 			 DIG_ON => DIG_ON,  
