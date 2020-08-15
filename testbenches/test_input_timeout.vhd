@@ -16,7 +16,7 @@ entity test_input_timeout is
 end;
 
 architecture bench of test_input_timeout is
-	component full_design 
+	component full_design_simulation 
 		GENERIC(
 			CLK_CYCLES_TIMEOUT : integer
 		);
@@ -115,7 +115,7 @@ architecture bench of test_input_timeout is
 		
 begin
 
-	comp : full_design 
+	comp : full_design_simulation 
 	generic map (CLK_CYCLES_TIMEOUT => CLK_CYCLES_TIMEOUT)
 				 
 	port map(ROW_ON => ROW_ON, 
