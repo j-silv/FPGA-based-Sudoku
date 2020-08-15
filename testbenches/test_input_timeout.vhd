@@ -18,8 +18,7 @@ end;
 architecture bench of test_input_timeout is
 	component full_design 
 		GENERIC(
-			CLK_FREQ : INTEGER;
-			TIMEOUT : INTEGER
+			CLK_CYCLES_TIMEOUT : integer
 		);
 		PORT
 		(
@@ -110,15 +109,14 @@ architecture bench of test_input_timeout is
 		constant STOP_SIMULATION_TIME : time := 1500 us;
 
 		-- input_timeout parameter information
-		constant SYS_CLK_FREQ : integer := 100E+3; -- (Hz)
-		constant TIMEOUT : integer := 1; -- (ms) 
-		-- for simulation purposes, 1000 us is the timeout requested
+		CONSTANT CLK_CYCLES_TIMEOUT : integer := 100; 
+		-- for simulation purposes, 100 clk cycles with a 
+		-- 100 kHz PLL clock gives 1000 us as the input_timeout requested
 		
 begin
 
 	comp : full_design 
-	generic map (CLK_FREQ => SYS_CLK_FREQ,
-				 TIMEOUT => TIMEOUT)
+	generic map (CLK_CYCLES_TIMEOUT => CLK_CYCLES_TIMEOUT)
 				 
 	port map(ROW_ON => ROW_ON, 
 			 COL_ON => COL_ON, 
