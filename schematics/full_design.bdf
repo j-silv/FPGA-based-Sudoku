@@ -653,9 +653,9 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1408 496 1646 512)
+	(rect 1408 496 1619 512)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
-	(text "addr_decoder[8..0]" (rect 90 0 232 16)(font "Arial" ))
+	(text "decode_in[8..0]" (rect 90 0 205 16)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -1087,7 +1087,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 952 -24 1120 56)
+	(rect 936 -24 1104 56)
 	(text "addr_counter" (rect 5 0 105 16)(font "Arial" ))
 	(text "inst17" (rect 8 64 52 80)(font "Arial" ))
 	(port
@@ -1116,7 +1116,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1288 -24 1480 56)
+	(rect 1312 -24 1504 56)
 	(text "addr_decoder" (rect 5 0 110 16)(font "Arial" ))
 	(text "inst18" (rect 8 64 52 80)(font "Arial" ))
 	(port
@@ -1473,15 +1473,6 @@ agreement for further details.
 	(pt 1016 -88)
 )
 (connector
-	(text "CLK" (rect 920 -8 951 8)(font "Arial" ))
-	(pt 936 8)
-	(pt 952 8)
-)
-(connector
-	(pt 928 24)
-	(pt 952 24)
-)
-(connector
 	(text "CLK" (rect 536 -8 567 8)(font "Arial" ))
 	(pt 576 0)
 	(pt 560 0)
@@ -1535,10 +1526,6 @@ agreement for further details.
 	(text "ADDR_CNT" (rect 810 32 898 48)(font "Arial" ))
 	(pt 928 48)
 	(pt 808 48)
-)
-(connector
-	(pt 928 24)
-	(pt 928 48)
 )
 (connector
 	(text "RAM_WR" (rect 810 64 881 80)(font "Arial" ))
@@ -1630,17 +1617,6 @@ agreement for further details.
 	(pt 808 144)
 	(pt 1144 144)
 	(color 0 0 255)
-)
-(connector
-	(text "addr_decoder[8]" (rect 1050 112 1173 128)(font "Arial" ))
-	(pt 808 128)
-	(pt 1160 128)
-)
-(connector
-	(text "addr_decoder[7..0]" (rect 1128 -24 1270 -8)(font "Arial" ))
-	(pt 1120 8)
-	(pt 1160 8)
-	(bus)
 )
 (connector
 	(text "NOT_RESET" (rect 472 8 569 24)(font "Arial" ))
@@ -1755,11 +1731,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1496 8)
-	(pt 1480 8)
-	(bus)
-)
-(connector
 	(pt 1448 232)
 	(pt 1424 232)
 	(bus)
@@ -1767,17 +1738,6 @@ agreement for further details.
 (connector
 	(pt 1160 216)
 	(pt 1192 216)
-)
-(connector
-	(pt 1176 184)
-	(pt 1192 184)
-	(bus)
-)
-(connector
-	(text "addr_decoder[7..0]" (rect 1176 -3 1192 139)(font "Arial" )(vertical))
-	(pt 1176 8)
-	(pt 1176 184)
-	(bus)
 )
 (connector
 	(text "pos_register[7..0]" (rect 1088 184 1218 200)(font "Arial" ))
@@ -1794,39 +1754,9 @@ agreement for further details.
 	(pt 1192 232)
 )
 (connector
-	(pt 1160 8)
-	(pt 1176 8)
-	(bus)
-)
-(connector
-	(text "addr_decoder[8..0]" (rect 1168 -8 1310 8)(font "Arial" ))
-	(pt 1176 8)
-	(pt 1288 8)
-	(bus)
-)
-(connector
-	(text "<<__$DEF_ALIAS17335>>" (rect 1135 -4 1151 196)(font "Arial" )(vertical)(invisible))
-	(pt 1160 8)
-	(pt 1160 128)
-)
-(connector
-	(pt 1160 128)
-	(pt 1160 216)
-)
-(connector
-	(pt 1496 -56)
-	(pt 1536 -56)
-	(bus)
-)
-(connector
 	(text "column_select[8..0]" (rect 1722 -64 1865 -48)(font "Arial" ))
 	(pt 1688 -56)
 	(pt 1712 -56)
-	(bus)
-)
-(connector
-	(pt 1496 8)
-	(pt 1496 -56)
 	(bus)
 )
 (connector
@@ -1950,11 +1880,6 @@ agreement for further details.
 	(pt 1784 56)
 )
 (connector
-	(text "SHIFT_OUT" (rect 1594 8 1683 24)(font "Arial" ))
-	(pt 1480 24)
-	(pt 1784 24)
-)
-(connector
 	(pt 1728 128)
 	(pt 1728 72)
 	(bus)
@@ -2026,9 +1951,71 @@ agreement for further details.
 	(pt 320 0)
 	(pt 376 0)
 )
+(connector
+	(text "decode_in[8]" (rect 978 112 1074 128)(font "Arial" ))
+	(pt 808 128)
+	(pt 1160 128)
+)
+(connector
+	(pt 1160 128)
+	(pt 1160 216)
+)
+(connector
+	(text "SHIFT_OUT" (rect 1618 8 1707 24)(font "Arial" ))
+	(pt 1784 24)
+	(pt 1504 24)
+)
+(connector
+	(pt 1536 -56)
+	(pt 1512 -56)
+	(bus)
+)
+(connector
+	(pt 1504 8)
+	(pt 1512 8)
+	(bus)
+)
+(connector
+	(pt 1512 -56)
+	(pt 1512 8)
+	(bus)
+)
+(connector
+	(text "CLK" (rect 904 -8 935 8)(font "Arial" ))
+	(pt 920 8)
+	(pt 936 8)
+)
+(connector
+	(pt 928 24)
+	(pt 936 24)
+)
+(connector
+	(pt 928 48)
+	(pt 928 24)
+)
+(connector
+	(pt 1192 184)
+	(pt 1176 184)
+	(bus)
+)
+(connector
+	(text "decode_in[7..0]" (rect 1174 18 1190 133)(font "Arial" )(vertical))
+	(pt 1176 8)
+	(pt 1176 184)
+	(bus)
+)
+(connector
+	(text "decode_in[8..0]" (rect 1192 0 1307 16)(font "Arial" ))
+	(pt 1312 8)
+	(pt 1296 8)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS918>>" (rect 1104 -8 1285 8)(font "Arial" )(invisible))
+	(pt 1176 8)
+	(pt 1104 8)
+	(bus)
+)
 (junction (pt 544 336))
-(junction (pt 1176 8))
-(junction (pt 1160 8))
-(junction (pt 1160 128))
 (junction (pt 880 256))
 (text "ADDR_OE" (rect 808 112 887 128)(font "Arial" (color 128 0 128)))
