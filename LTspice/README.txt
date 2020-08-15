@@ -1,0 +1,1 @@
+In this folder, you will find circuit simulation (LTspice) files for various components of the Sudoku design

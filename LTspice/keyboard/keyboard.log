@@ -1,0 +1,76 @@
+Circuit: * C:\Users\idontseeit\Desktop\Justins_Files\electronics\Projects\sudoku\git\FPGA-based-Sudoku\LTspice\keyboard.asc
+
+Limiting rise time of source v7 to 1e-008
+Limiting fall time of source v7 to 1e-008
+Limiting rise time of source v6 to 1e-008
+Limiting fall time of source v6 to 1e-008
+Limiting rise time of source v5 to 1e-008
+Limiting fall time of source v5 to 1e-008
+Limiting rise time of source v4 to 1e-008
+Limiting fall time of source v4 to 1e-008
+WARNING: Specified period is not longer than the sum of Trise, Tfall, and Ton for v3.  Increasing period to 0.05
+Limiting rise time of source v3 to 9.71445e-018
+Limiting fall time of source v3 to 9.71445e-018
+Limiting rise time of source v2 to 0.000125
+Limiting fall time of source v2 to 0.000125
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 0.0100625 +++++++++++++++++++++to 0.0100625
+Heightened Def Con from 0.0100625 +++++++++++to 0.0100625
+Heightened Def Con from 0.0100625 +to 0.0100625
+Heightened Def Con from 0.0114375 to 0.0114375
+Heightened Def Con from 0.0114375 ++++++++++++++++++++to 0.0114375
+Heightened Def Con from 0.0114375 ++++++++++to 0.0114375
+Heightened Def Con from 0.0125625 to 0.0125625
+Heightened Def Con from 0.0125625 +++++++++++++++++++++to 0.0125625
+Heightened Def Con from 0.0125625 +++++++++++to 0.0125625
+Heightened Def Con from 0.0139375 ++++++++++++++++++++to 0.0139375
+Heightened Def Con from 0.0139375 ++++++++++to 0.0139375
+Heightened Def Con from 0.0150625 +++++++++++++++++++++to 0.0150625
+Heightened Def Con from 0.0150625 +++++++++++to 0.0150625
+Heightened Def Con from 0.0164375 to 0.0164375
+Heightened Def Con from 0.0164375 ++++++++++++++++++++to 0.0164375
+Heightened Def Con from 0.0164375 ++++++++++to 0.0164375
+Heightened Def Con from 0.0175625 +++++++++++++++++++++to 0.0175625
+Heightened Def Con from 0.0175625 +++++++++++to 0.0175625
+Heightened Def Con from 0.0189375 ++++++++++++++++++++to 0.0189375
+Heightened Def Con from 0.0189375 ++++++++++to 0.0189375
+Heightened Def Con from 0.0200625 to 0.0200625
+Heightened Def Con from 0.0200625 +++++++++++++++++++++to 0.0200625
+Heightened Def Con from 0.0200625 +++++++++++to 0.0200625
+Heightened Def Con from 0.0214375 ++++++++++++++++++++to 0.0214375
+Heightened Def Con from 0.0214375 ++++++++++to 0.0214375
+Heightened Def Con from 0.0225625 +++++++++++++++++++++to 0.0225625
+Heightened Def Con from 0.0225625 +++++++++++to 0.0225625
+Heightened Def Con from 0.0239375 to 0.0239375
+Heightened Def Con from 0.0239375 ++++++++++++++++++++to 0.0239375
+Heightened Def Con from 0.0239375 ++++++++++to 0.0239375
+Heightened Def Con from 0.0250625 +++++++++++++++++++++to 0.0250625
+Heightened Def Con from 0.0250625 +++++++++++to 0.0250625
+Heightened Def Con from 0.0264375 ++++++++++++++++++++to 0.0264375
+Heightened Def Con from 0.0264375 ++++++++++to 0.0264375
+Heightened Def Con from 0.0275625 +++++++++++++++++++++to 0.0275625
+Heightened Def Con from 0.0275625 +++++++++++to 0.0275625
+Heightened Def Con from 0.0289375 to 0.0289375
+Heightened Def Con from 0.0289375 ++++++++++++++++++++to 0.0289375
+Heightened Def Con from 0.0289375 ++++++++++to 0.0289375
+Heightened Def Con from 0.1 +++++++++++++++++++++to 0.1
+Heightened Def Con from 0.1 +++++++++++to 0.1
+Heightened Def Con from 0.1 +to 0.1
+
+Date: Sat Aug 15 20:17:56 2020
+Total elapsed time: 1.264 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 76230
+traniter = 76203
+tranpoints = 10290
+accept = 4525
+rejected = 6337
+matrix size = 30
+fillins = 14
+solver = Normal
+Matrix Compiler1: 1.74 KB object code size  0.8/0.4/[0.2]
+Matrix Compiler2: 2.17 KB object code size  0.4/0.5/[0.3]
+
