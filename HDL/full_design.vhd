@@ -23,6 +23,10 @@ USE ieee.std_logic_1164.all;
 LIBRARY work;
 
 ENTITY full_design IS 
+	GENERIC(
+		CLK_FREQ : INTEGER := 10E+3;
+		TIMEOUT : INTEGER := 5
+	);
 	PORT
 	(
 		ROW_ON :  IN  STD_LOGIC;
@@ -332,8 +336,8 @@ PORT MAP(D => decode_in_ALTERA_SYNTHESIZED,
 
 
 b2v_inst19 : input_timeout
-GENERIC MAP(CLK_FREQ => 10000,
-			TIMEOUT => 5
+GENERIC MAP(CLK_FREQ => CLK_FREQ,
+			TIMEOUT => TIMEOUT
 			)
 PORT MAP(clk => CLK_ALTERA_SYNTHESIZED,
 		 rst => DELAY_RST_ALTERA_SYNTHESIZED,
