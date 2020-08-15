@@ -1205,14 +1205,14 @@ agreement for further details.
 	)
 	(parameter
 		"CLK_CYCLES_TIMEOUT"
-		"100"
-		""
+		"500000"
+		"Number of clock cycles that will need to occur for the timeout to be activated"
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 112 64))
 	)
 	(flipy)
-	(annotation_block (parameter)(rect 696 -208 1072 -168))
+	(annotation_block (parameter)(rect 696 -208 1081 -170))
 )
 (connector
 	(pt 888 -72)
