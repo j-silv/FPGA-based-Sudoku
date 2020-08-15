@@ -46,13 +46,8 @@ agreement for further details.
 		(line (pt 128 32)(pt 112 32)(line_width 1))
 	)
 	(parameter
-		"CLK_FREQ"
-		"10000"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"TIMEOUT"
-		"5"
+		"CLK_CYCLES_TIMEOUT"
+		"100"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
