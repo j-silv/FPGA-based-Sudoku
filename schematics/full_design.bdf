@@ -1526,11 +1526,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "CLK" (rect 1504 104 1535 120)(font "Arial" ))
-	(pt 1528 128)
-	(pt 1536 128)
-)
-(connector
 	(text "ram_out[7..0]" (rect 1698 128 1797 144)(font "Arial" ))
 	(pt 1728 128)
 	(pt 1696 128)
@@ -1567,11 +1562,6 @@ agreement for further details.
 	(pt 1448 232)
 	(pt 1448 160)
 	(bus)
-)
-(connector
-	(text "CLK" (rect 1752 0 1783 16)(font "Arial" ))
-	(pt 1784 8)
-	(pt 1776 8)
 )
 (connector
 	(pt 1728 72)
@@ -1742,11 +1732,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "CLK" (rect 904 -8 935 8)(font "Arial" ))
-	(pt 920 8)
-	(pt 936 8)
-)
-(connector
 	(pt 928 24)
 	(pt 936 24)
 )
@@ -1780,6 +1765,21 @@ agreement for further details.
 	(text "SYS_CLK" (rect -112 -40 -39 -24)(font "Arial" ))
 	(pt -104 -24)
 	(pt -8 -24)
+)
+(connector
+	(text "INV_CLK" (rect 1728 0 1794 16)(font "Arial" ))
+	(pt 1784 8)
+	(pt 1776 8)
+)
+(connector
+	(text "INV_CLK" (rect 1472 96 1538 112)(font "Arial" ))
+	(pt 1528 128)
+	(pt 1536 128)
+)
+(connector
+	(text "INV_CLK" (rect 880 -8 946 8)(font "Arial" ))
+	(pt 920 8)
+	(pt 936 8)
 )
 (junction (pt 544 336))
 (junction (pt 880 256))
