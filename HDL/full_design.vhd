@@ -15,7 +15,7 @@
 
 -- PROGRAM		"Quartus II 64-Bit"
 -- VERSION		"Version 15.0.0 Build 145 04/22/2015 SJ Web Edition"
--- CREATED		"Sat Aug 15 10:07:44 2020"
+-- CREATED		"Sat Aug 15 11:08:45 2020"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -154,6 +154,16 @@ COMPONENT addr_decoder
 	);
 END COMPONENT;
 
+COMPONENT input_timeout
+GENERIC (CLK_FREQ : INTEGER;
+			TIMEOUT : INTEGER
+			);
+	PORT(clk : IN STD_LOGIC;
+		 rst : IN STD_LOGIC;
+		 done : OUT STD_LOGIC
+	);
+END COMPONENT;
+
 COMPONENT addr_bus_mux
 	PORT(ADDR_OE : IN STD_LOGIC;
 		 REG_OE : IN STD_LOGIC;
@@ -201,13 +211,6 @@ COMPONENT input_key_register
 		 RST : IN STD_LOGIC;
 		 D : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Q : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
-	);
-END COMPONENT;
-
-COMPONENT input_timeout
-	PORT(clk : IN STD_LOGIC;
-		 rst : IN STD_LOGIC;
-		 done : OUT STD_LOGIC
 	);
 END COMPONENT;
 
@@ -328,6 +331,15 @@ PORT MAP(D => decode_in_ALTERA_SYNTHESIZED,
 		 COL_SEL => SYNTHESIZED_WIRE_3);
 
 
+b2v_inst19 : input_timeout
+GENERIC MAP(CLK_FREQ => 10000,
+			TIMEOUT => 5
+			)
+PORT MAP(clk => CLK_ALTERA_SYNTHESIZED,
+		 rst => DELAY_RST_ALTERA_SYNTHESIZED,
+		 done => DELAY_DONE_ALTERA_SYNTHESIZED);
+
+
 b2v_inst20 : addr_bus_mux
 PORT MAP(ADDR_OE => decode_in_ALTERA_SYNTHESIZED(8),
 		 REG_OE => REG_OE_ALTERA_SYNTHESIZED,
@@ -375,12 +387,6 @@ PORT MAP(CLK => INV_CLK_ALTERA_SYNTHESIZED,
 
 NOT_RESET <= NOT(RESET);
 
-
-
-b2v_inst7 : input_timeout
-PORT MAP(clk => CLK_ALTERA_SYNTHESIZED,
-		 rst => DELAY_RST_ALTERA_SYNTHESIZED,
-		 done => DELAY_DONE_ALTERA_SYNTHESIZED);
 
 
 b2v_inst9 : key_counter
