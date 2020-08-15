@@ -47,7 +47,7 @@ agreement for further details.
 	)
 	(parameter
 		"CLK_CYCLES_TIMEOUT"
-		"100"
+		"500000"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

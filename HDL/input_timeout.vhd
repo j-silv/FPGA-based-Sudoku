@@ -23,9 +23,9 @@ entity input_timeout is
 		-- how many clock cycles will it take for the keyboard timeout
 		-- to be activated (i.e. for the signal DELAY_DONE to become
 		-- active)
-		-- the default value is 100, so if a 100 kHz PLL clock is used,
-		-- that would give a 1 ms timeout
-		CLK_CYCLES_TIMEOUT : integer := 100
+		-- the default value is 500000, so if a 100 kHz PLL clock is used,
+		-- that would give a 5 s timeout
+		CLK_CYCLES_TIMEOUT : integer := 500000
 	);
 	port(
 		clk		: in std_logic;

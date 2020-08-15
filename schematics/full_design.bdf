@@ -1181,7 +1181,7 @@ agreement for further details.
 (symbol
 	(rect 616 -120 744 -40)
 	(text "input_timeout" (rect 23 0 123 16)(font "Arial" ))
-	(text "inst3" (rect 85 64 120 80)(font "Arial" ))
+	(text "inst2" (rect 85 64 120 80)(font "Arial" ))
 	(port
 		(pt 128 32)
 		(input)
@@ -1206,13 +1206,13 @@ agreement for further details.
 	(parameter
 		"CLK_CYCLES_TIMEOUT"
 		"500000"
-		"Number of clock cycles that will need to occur for the timeout to be activated"
+		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 112 64))
 	)
 	(flipy)
-	(annotation_block (parameter)(rect 696 -208 1081 -170))
+	(annotation_block (parameter)(rect 664 -248 1056 -208))
 )
 (connector
 	(pt 888 -72)
