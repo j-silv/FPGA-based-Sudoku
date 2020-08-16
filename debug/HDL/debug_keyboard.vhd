@@ -77,28 +77,3 @@ begin
 		end if;
 	end process;
 end architecture logic;
-
-
-
-/* PIN ASSIGNMENTS
-row_0[7]	Output	PIN_W17	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_0[6]	Output	PIN_U15	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_0[5]	Output	PIN_V14	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_0[4]	Output	PIN_V13	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_0[3]	Output	PIN_Y13	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_0[2]	Output	PIN_Y10	3	B3_N0	3.3-V LVTTL		Maximum Current	
-row_0[1]	Output	PIN_V9	3	B3_N0	3.3-V LVTTL		Maximum Current	
-row_1[7]	Output	PIN_V17	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_1[6]	Output	PIN_V16	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_1[5]	Output	PIN_W15	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_1[4]	Output	PIN_W14	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_1[3]	Output	PIN_Y14	4	B4_N0	3.3-V LVTTL		Maximum Current	
-row_1[2]	Output	PIN_AA10	3	B3_N0	3.3-V LVTTL	Maximum Current	
-row_1[1]	Output	PIN_V10	3	B3_N0	3.3-V LVTTL		Maximum Current	
-
-column_select[2]	Output	PIN_B4	8	B8_N0	3.3-V LVTTL						On
-column_select[1]	Output	PIN_A4	8	B8_N0	3.3-V LVTTL						On
-column_select[0]	Output	PIN_B3	8	B8_N0	3.3-V LVTTL						On
-
-
-*/

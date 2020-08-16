@@ -1,0 +1,49 @@
+* C:\Users\idontseeit\Desktop\Justins_Files\electronics\Projects\sudoku\git\FPGA-based-Sudoku\LTspice\LED_driver\ULN2003A_test.asc
+Q1 N015 N017 N018 0 NPN
+D1 N001 N015 LED1
+D2 N002 N015 LED1
+D3 N003 N015 LED1
+D4 N004 N015 LED1
+D5 N005 N015 LED1
+D6 N006 N015 LED1
+D7 N007 N015 LED1
+R1 Vcc N001 {R}
+R2 Vcc N002 {R}
+R3 Vcc N003 {R}
+R4 Vcc N004 {R}
+R5 Vcc N005 {R}
+R6 Vcc N006 {R}
+R7 Vcc N007 {R}
+R8 N016 GPIO_FPGA 2.7k
+R9 N017 N016 7.2k
+V1 Vcc 0 3.3
+V2 GPIO_FPGA 0 3.3
+Q2 N015 N016 N017 0 NPN
+R10 N018 N017 3k
+R11 N018 0 1
+D8 N008 N015 LED1
+R12 Vcc N008 {R}
+D9 N009 N015 LED1
+R13 Vcc N009 {R}
+D10 N010 N015 LED1
+R14 Vcc N010 {R}
+D11 N011 N015 LED1
+R15 Vcc N011 {R}
+D12 N012 N015 LED1
+R16 Vcc N012 {R}
+D13 N013 N015 LED1
+R17 Vcc N013 {R}
+D14 N014 N015 LED1
+R18 Vcc N014 {R}
+.model D D
+.lib C:\Users\idontseeit\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\idontseeit\Documents\LTspiceXVII\lib\cmp\standard.bjt
+.param R = 220
+.tran 100us
+*Typ RED GaAs LED: Vf=1.7V Vr=4V If=40mA trr=3uS
+.MODEL LED1 D (IS=93.2P RS=42M N=3.73 BV=4 IBV=10U
++ CJO=2.97P VJ=.75 M=.333 TT=4.32U)
+.backanno
+.end
