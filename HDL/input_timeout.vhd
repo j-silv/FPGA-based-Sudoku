@@ -39,7 +39,7 @@ begin
 	process(clk,rst)
 		variable tick : integer := 0;
 	begin
-		-- if the FSM restarts the delay, make sure that the delay done signal is not active
+		-- if the FSM restarts the delay, make sure that the delay_done signal is not active
 		if rst = '1' then
 			tick := 0;
 			done <= '0';
@@ -48,7 +48,8 @@ begin
 			
 			if tick = CLK_CYCLES_TIMEOUT then
 				done <= '1';
-				-- reset tick because otherwise it will continue counting behind CLK_CYCLES_TIMEOUT
+				-- reset tick because otherwise it will continue counting beyond CLK_CYCLES_TIMEOUT
+				-- during the next rising_edge(clk)
 				tick := 0;
 			else 
 				done <= '0';

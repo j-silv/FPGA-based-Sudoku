@@ -19,49 +19,52 @@ entity full_design_all_signals is
 end;
 
 architecture bench of full_design_all_signals is
-	component full_design 
-		PORT
-		(
-			ROW_ON :  IN  STD_LOGIC;
-			COL_ON :  IN  STD_LOGIC;
-			DIG_ON :  IN  STD_LOGIC;
-			SYS_CLK :  IN  STD_LOGIC;
-			RESET :  IN  STD_LOGIC;
-			keyboard_in :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
-			DELAY_RST :  OUT  STD_LOGIC;
-			KEY_CNT :  OUT  STD_LOGIC;
-			KEY_RST :  OUT  STD_LOGIC;
-			ADDR_CNT :  OUT  STD_LOGIC;
-			SHIFT_EN :  OUT  STD_LOGIC;
-			RAM_WR :  OUT  STD_LOGIC;
-			REG_OE :  OUT  STD_LOGIC;
-			ROW_EN :  OUT  STD_LOGIC;
-			COL_EN :  OUT  STD_LOGIC;
-			DIG_EN :  OUT  STD_LOGIC;
-			DELAY_DONE :  OUT  STD_LOGIC;
-			KEY_DONE :  OUT  STD_LOGIC;
-			SHIFT_OUT :  OUT  STD_LOGIC;
-			INV_CLK :  OUT  STD_LOGIC;
-			CLK :  OUT  STD_LOGIC;
-			column_select :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
-			decode_in :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
-			encoded_ledseg :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			encoded_position :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0);
-			keyboard_out :  OUT  STD_LOGIC_VECTOR(9 DOWNTO 0);
-			pos_register :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			ram_addr :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			ram_in :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			ram_out :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_0 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_1 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_2 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_3 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_4 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_5 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_6 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_7 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			row_8 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
-		);
+	component full_design_simulation 
+	GENERIC(
+		CLK_CYCLES_TIMEOUT : integer
+	);
+	PORT
+	(
+ROW_ON :  IN  STD_LOGIC;
+		COL_ON :  IN  STD_LOGIC;
+		DIG_ON :  IN  STD_LOGIC;
+		SYS_CLK :  IN  STD_LOGIC;
+		RESET :  IN  STD_LOGIC;
+		keyboard_in :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		DELAY_RST :  OUT  STD_LOGIC;
+		KEY_CNT :  OUT  STD_LOGIC;
+		KEY_RST :  OUT  STD_LOGIC;
+		ADDR_CNT :  OUT  STD_LOGIC;
+		SHIFT_EN :  OUT  STD_LOGIC;
+		RAM_WR :  OUT  STD_LOGIC;
+		REG_OE :  OUT  STD_LOGIC;
+		ROW_EN :  OUT  STD_LOGIC;
+		COL_EN :  OUT  STD_LOGIC;
+		DIG_EN :  OUT  STD_LOGIC;
+		DELAY_DONE :  OUT  STD_LOGIC;
+		KEY_DONE :  OUT  STD_LOGIC;
+		SHIFT_OUT :  OUT  STD_LOGIC;
+		INV_CLK :  OUT  STD_LOGIC;
+		CLK :  OUT  STD_LOGIC;
+		column_select :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
+		decode_in :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
+		encoded_ledseg :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		encoded_position :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0);
+		keyboard_out :  OUT  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		pos_register :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		ram_addr :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		ram_in :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		ram_out :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_0 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_1 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_2 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_3 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_4 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_5 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_6 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_7 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		row_8 :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
 	end component;
 
 		signal ROW_ON :    STD_LOGIC;
@@ -105,17 +108,18 @@ architecture bench of full_design_all_signals is
 		signal row_8 :    STD_LOGIC_VECTOR(7 DOWNTO 0);
 		
 		-- simulation information
-		constant SYS_CLK_FREQ : integer := 50E+6;
-		constant SYS_CLK_T : time := 20 ns;
-		constant STOP_SIMULATION_TIME : integer := 10; --(ns)
-		constant NUM_CLK_CYCLES : integer := 30000;
+		constant SYS_CLK_T : time := 20 ns; -- 50 MHz SYS_CLK
+		constant STOP_SIMULATION_TIME : time := 650 us;
 
-		-- loop variable
-		signal i : integer := 0;
+		-- input_timeout parameter information
+		CONSTANT CLK_CYCLES_TIMEOUT : integer := 500000; 
+		-- for simulation purposes, 500000 clk cycles with a 
+		-- 100 kHz PLL clock gives 5 s as the input_timeout requested
 		
 begin
 
-	comp : full_design 
+	comp : full_design_simulation 
+	generic map (CLK_CYCLES_TIMEOUT => CLK_CYCLES_TIMEOUT)
 	port map(ROW_ON => ROW_ON, 
 			 COL_ON => COL_ON, 
 			 DIG_ON => DIG_ON,  
@@ -180,11 +184,9 @@ begin
 		SYS_CLK <= '1';
 		wait for (SYS_CLK_T)/2;
 		
-		-- stop simulation
-		if i = NUM_CLK_CYCLES then
+		-- stop simulation if the specified duration is exceeded
+		if NOW > STOP_SIMULATION_TIME then
             wait;
-        else
-            i <= i + 1;
         end if;
 	end process;
 end bench;

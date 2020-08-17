@@ -847,7 +847,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 936 -24 1104 56)
+	(rect 952 -24 1120 56)
 	(text "addr_counter" (rect 5 0 105 16)(font "Arial" ))
 	(text "inst17" (rect 8 64 52 80)(font "Arial" ))
 	(port
@@ -1206,11 +1206,6 @@ agreement for further details.
 	(pt 744 -72)
 	(pt 824 -72)
 	(color 0 0 255)
-)
-(connector
-	(text "CLK" (rect 792 -96 823 -80)(font "Arial" ))
-	(pt 744 -88)
-	(pt 784 -88)
 )
 (connector
 	(pt 1056 -88)
@@ -1684,26 +1679,7 @@ agreement for further details.
 	(pt 1160 216)
 )
 (connector
-	(text "SHIFT_OUT" (rect 1618 8 1707 24)(font "Arial" ))
-	(pt 1784 24)
-	(pt 1504 24)
-)
-(connector
-	(pt 928 24)
-	(pt 936 24)
-)
-(connector
-	(pt 928 48)
-	(pt 928 24)
-)
-(connector
 	(pt 1192 184)
-	(pt 1176 184)
-	(bus)
-)
-(connector
-	(text "decode_in[7..0]" (rect 1174 18 1190 133)(font "Arial" )(vertical))
-	(pt 1176 8)
 	(pt 1176 184)
 	(bus)
 )
@@ -1714,45 +1690,59 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1176 8)
-	(pt 1104 8)
-	(bus)
+	(text "SYS_CLK" (rect -104 -40 -31 -24)(font "Arial" ))
+	(pt -96 -24)
+	(pt 0 -24)
 )
 (connector
-	(text "CLK" (rect 880 -8 911 8)(font "Arial" ))
-	(pt 920 8)
-	(pt 936 8)
-)
-(connector
-	(text "CLK" (rect 1472 96 1503 112)(font "Arial" ))
-	(pt 1528 128)
-	(pt 1536 128)
-)
-(connector
-	(text "CLK" (rect 1728 0 1759 16)(font "Arial" ))
+	(text "INV_CLK" (rect 1720 -8 1786 8)(font "Arial" ))
 	(pt 1784 8)
 	(pt 1776 8)
 )
 (connector
+	(text "INV_CLK" (rect 1472 120 1538 136)(font "Arial" ))
+	(pt 1528 128)
+	(pt 1536 128)
+)
+(connector
+	(text "SHIFT_OUT" (rect 1706 8 1795 24)(font "Arial" ))
+	(pt 1504 24)
+	(pt 1784 24)
+)
+(connector
+	(text "column_select[8..0]" (rect 1544 0 1687 16)(font "Arial" ))
 	(pt 1504 8)
-	(pt 1560 8)
+	(pt 1536 8)
 	(bus)
 )
 (connector
-	(pt 1560 -32)
-	(pt 1560 8)
+	(pt 928 48)
+	(pt 928 24)
+)
+(connector
+	(text "decode_in[7..0]" (rect 1174 18 1190 133)(font "Arial" )(vertical))
+	(pt 1176 184)
+	(pt 1176 8)
 	(bus)
 )
 (connector
-	(text "column_select[8..0]" (rect 1560 -48 1703 -32)(font "Arial" ))
-	(pt 1560 -32)
-	(pt 1624 -32)
+	(pt 1176 8)
+	(pt 1120 8)
 	(bus)
 )
 (connector
-	(text "SYS_CLK" (rect -104 -40 -31 -24)(font "Arial" ))
-	(pt -96 -24)
-	(pt 0 -24)
+	(text "INV_CLK" (rect 896 -8 962 8)(font "Arial" ))
+	(pt 936 8)
+	(pt 952 8)
+)
+(connector
+	(pt 928 24)
+	(pt 952 24)
+)
+(connector
+	(text "INV_CLK" (rect 784 -104 850 -88)(font "Arial" ))
+	(pt 744 -88)
+	(pt 784 -88)
 )
 (junction (pt 544 336))
 (junction (pt 880 256))
