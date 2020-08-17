@@ -24,7 +24,7 @@ LIBRARY work;
 
 ENTITY full_design_simulation IS 
 	GENERIC(
-		CLK_CYCLES_TIMEOUT : integer
+		CLK_CYCLES_TIMEOUT : integer := 500000
 	);
 	PORT
 	(
