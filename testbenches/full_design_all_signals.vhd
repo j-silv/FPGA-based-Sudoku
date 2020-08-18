@@ -21,11 +21,12 @@ end;
 architecture bench of full_design_all_signals is
 	component full_design_simulation 
 	GENERIC(
-		CLK_CYCLES_TIMEOUT : integer
+		CLK_CYCLES_TIMEOUT : integer;
+		CLK_CYCLES_BOUNCE : integer
 	);
 	PORT
 	(
-ROW_ON :  IN  STD_LOGIC;
+		ROW_ON :  IN  STD_LOGIC;
 		COL_ON :  IN  STD_LOGIC;
 		DIG_ON :  IN  STD_LOGIC;
 		SYS_CLK :  IN  STD_LOGIC;
@@ -46,6 +47,8 @@ ROW_ON :  IN  STD_LOGIC;
 		SHIFT_OUT :  OUT  STD_LOGIC;
 		INV_CLK :  OUT  STD_LOGIC;
 		CLK :  OUT  STD_LOGIC;
+		BOUNCE_RST :  OUT  STD_LOGIC;
+		BOUNCE_DONE :  OUT  STD_LOGIC;
 		column_select :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		decode_in :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		encoded_ledseg :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -88,6 +91,8 @@ ROW_ON :  IN  STD_LOGIC;
 		signal SHIFT_OUT :    STD_LOGIC;
 		signal INV_CLK :    STD_LOGIC;
 		signal CLK :    STD_LOGIC;
+		signal BOUNCE_RST :  STD_LOGIC;
+		signal BOUNCE_DONE :  STD_LOGIC;
 		signal decode_in :  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		signal column_select :    STD_LOGIC_VECTOR(8 DOWNTO 0);
 		signal encoded_ledseg :    STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -109,17 +114,23 @@ ROW_ON :  IN  STD_LOGIC;
 		
 		-- simulation information
 		constant SYS_CLK_T : time := 20 ns; -- 50 MHz SYS_CLK
-		constant STOP_SIMULATION_TIME : time := 650 us;
+		constant STOP_SIMULATION_TIME : time := 900 us;
 
 		-- input_timeout parameter information
 		CONSTANT CLK_CYCLES_TIMEOUT : integer := 500000; 
 		-- for simulation purposes, 500000 clk cycles with a 
 		-- 100 kHz PLL clock gives 5 s as the input_timeout requested
 		
+		-- debouncer parameter information
+		CONSTANT CLK_CYCLES_BOUNCE : integer := 4; 
+		-- for simulation purposes, 4 clk cycles with a 
+		-- 100 kHz PLL clock gives 40 us as the "bouncing" time
+		
 begin
 
 	comp : full_design_simulation 
-	generic map (CLK_CYCLES_TIMEOUT => CLK_CYCLES_TIMEOUT)
+	generic map (CLK_CYCLES_TIMEOUT => CLK_CYCLES_TIMEOUT,
+				 CLK_CYCLES_BOUNCE => CLK_CYCLES_BOUNCE)
 	port map(ROW_ON => ROW_ON, 
 			 COL_ON => COL_ON, 
 			 DIG_ON => DIG_ON,  
@@ -141,6 +152,8 @@ begin
 			 SHIFT_OUT => SHIFT_OUT, 
 			 INV_CLK => INV_CLK, 
 			 CLK => CLK, 
+			 BOUNCE_RST => BOUNCE_RST,
+			 BOUNCE_DONE => BOUNCE_DONE,
 			 decode_in => decode_in,
 			 column_select => column_select, 
 			 encoded_ledseg => encoded_ledseg, 
@@ -165,16 +178,16 @@ begin
 	RESET <= '0', '1' after 11 us;
 	
 	-- input (ON) signals from the keyboard
-	COL_ON <= '0', '1' after 30 us, '0' after  60 us;
-	ROW_ON <= '0', '1' after 90 us, '0' after 120 us;
-	DIG_ON <= '0', '1' after 150 us, '0' after 180 us;
+	COL_ON <= '0', '1' after 30 us, '0' after  110 us;
+	ROW_ON <= '0', '1' after 190 us, '0' after 270 us;
+	DIG_ON <= '0', '1' after 350 us, '0' after 440 us;
 	
 	-- input signals from the keyboard
-	-- tests inputting the 3rd column, 3rd row, and the number 5 to the Sudoku grid  
+	-- tests inputting the 6th column, 3rd row, and the number 5 to the Sudoku grid  
 	keyboard_in <=  "0000000000", 
-					"0000000100" after 30 us,  "0000000000" after 60 us,
-					"0000000100" after 90 us,  "0000000000" after 120 us,
-					"0000100000" after 150 us, "0000000000" after 180 us;
+					"0000100000" after 30 us,  "0000000000" after 110 us,
+					"0000000100" after 190 us,  "0000000000" after 270 us,
+					"0000100000" after 350 us, "0000000000" after 440 us;
 
 	-- continuous system (in) clock 
 	process 

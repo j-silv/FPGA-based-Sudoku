@@ -1978,33 +1978,6 @@ agreement for further details.
 	(pt 768 -192)
 )
 (connector
-	(pt 600 -192)
-	(pt 432 -192)
-	(color 0 0 255)
-)
-(connector
-	(pt 560 0)
-	(pt 432 0)
-	(color 0 0 255)
-)
-(connector
-	(pt 560 16)
-	(pt 416 16)
-	(color 0 0 255)
-)
-(connector
-	(text "KEY_DONE" (rect 400 -205 416 -118)(font "Arial" )(vertical))
-	(pt 416 16)
-	(pt 416 -240)
-	(color 0 0 255)
-)
-(connector
-	(text "DELAY_DONE" (rect 416 -209 432 -101)(font "Arial" )(vertical))
-	(pt 432 0)
-	(pt 432 -192)
-	(color 0 0 255)
-)
-(connector
 	(pt 880 32)
 	(pt 880 -176)
 	(color 0 0 255)
@@ -2024,16 +1997,6 @@ agreement for further details.
 (connector
 	(pt 864 16)
 	(pt 864 -192)
-	(color 0 0 255)
-)
-(connector
-	(pt 1064 -240)
-	(pt 1064 -192)
-	(color 0 0 255)
-)
-(connector
-	(pt 416 -240)
-	(pt 1064 -240)
 	(color 0 0 255)
 )
 (connector
@@ -2083,16 +2046,54 @@ agreement for further details.
 	(pt 824 -88)
 )
 (connector
+	(pt 1064 -192)
+	(pt 1064 -240)
+	(color 0 0 255)
+)
+(connector
+	(pt 1064 -240)
+	(pt 480 -240)
+	(color 0 0 255)
+)
+(connector
+	(text "DELAY_DONE" (rect 488 -121 504 -13)(font "Arial" )(vertical))
+	(pt 504 0)
+	(pt 504 -192)
+	(color 0 0 255)
+)
+(connector
+	(pt 600 -192)
+	(pt 504 -192)
+	(color 0 0 255)
+)
+(connector
+	(pt 560 0)
+	(pt 504 0)
+	(color 0 0 255)
+)
+(connector
+	(text "KEY_DONE" (rect 464 -101 480 -14)(font "Arial" )(vertical))
+	(pt 480 -240)
+	(pt 480 16)
+	(color 0 0 255)
+)
+(connector
+	(pt 560 16)
+	(pt 480 16)
+	(color 0 0 255)
+)
+(connector
 	(pt 600 -104)
-	(pt 536 -104)
+	(pt 528 -104)
 )
 (connector
-	(pt 536 -16)
-	(pt 536 -104)
-)
-(connector
-	(pt 536 -16)
 	(pt 560 -16)
+	(pt 528 -16)
+)
+(connector
+	(text "BOUNCE_DONE" (rect 512 -138 528 -16)(font "Arial" )(vertical))
+	(pt 528 -16)
+	(pt 528 -104)
 )
 (junction (pt 544 336))
 (junction (pt 880 256))
