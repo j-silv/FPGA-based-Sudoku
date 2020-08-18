@@ -15,14 +15,15 @@ use ieee.std_logic_1164.all;
 
 entity fsm is
 	port(
-		CLK		 	: in std_logic;
-		RESET	 	: in std_logic; -- reset FSM to initial state
+		BOUNCE_DONE : in std_logic; -- status of debounce counter
 		DELAY_DONE 	: in std_logic; -- status of input timeout
 		KEY_DONE 	: in std_logic; -- status of number of distinct keyboard inputs detected
+		CLK		 	: in std_logic; -- state changes occur on the rising_edge of this input
+		RESET	 	: in std_logic; -- reset FSM to initial state
 		COL_ON 		: in std_logic; -- column input detected
 		ROW_ON 		: in std_logic; -- row input detected
 		DIG_ON		: in std_logic; -- digit input detected
-		BOUNCE_DONE : in std_logic; -- status of debounce counter
+
 		
 		BOUNCE_RST  : out std_logic; -- reset the debounce counter
 		DELAY_RST 	: out std_logic; -- reset the input timeout
