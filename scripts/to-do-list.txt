@@ -6,3 +6,4 @@
 - Script that takes .vhd files generated in project directory and puts them in HDL folder
 - Script that takes .bsf files generated in HDL folder and puts them in symbols folder
 - Script that takes .vhd files generated in schematic folder and puts them in HDL folder
+- Edit pin assignment script for clarity, by including for loops
