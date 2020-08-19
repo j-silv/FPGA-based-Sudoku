@@ -49,13 +49,16 @@ for {set i 0} {$i < 3} {incr i} {
 set_location_assignment PIN_N14 -to SYS_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SYS_CLK
 
-# set pin location and logic level for the ON signals from the keyboard
+# set pin location, logic level and pullups for the ON signals from the keyboard
 set_location_assignment PIN_A2 -to ROW_ON
 set_location_assignment PIN_C3 -to COL_ON
 set_location_assignment PIN_A3 -to DIG_ON
 set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to ROW_ON
 set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to COL_ON
 set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to DIG_ON
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ROW_ON
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to COL_ON
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to DIG_ON
 
 # set pin location for the input keyboard signals
 set_location_assignment PIN_B1 -to keyboard_in[0]
@@ -69,12 +72,10 @@ set_location_assignment PIN_C17 -to keyboard_in[7]
 set_location_assignment PIN_E15 -to keyboard_in[8]
 set_location_assignment PIN_K15 -to keyboard_in[9]
 
-# set logic level for the input keyboard signals
-
+# set logic level and internal pullups for the input keyboard signals
 for {set i 0} {$i < 10} {incr i} {
     set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to keyboard_in[$i]
-	# test to see if the pullups are off by default
-	# set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to keyboard_in[$i]
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[$i]
 }
 
 # set pin location and logic level for main reset signal
