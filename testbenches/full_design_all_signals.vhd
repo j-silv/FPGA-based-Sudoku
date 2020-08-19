@@ -178,16 +178,16 @@ begin
 	RESET <= '0', '1' after 11 us;
 	
 	-- input (ON) signals from the keyboard
-	COL_ON <= '0', '1' after 30 us, '0' after  110 us;
-	ROW_ON <= '0', '1' after 190 us, '0' after 270 us;
-	DIG_ON <= '0', '1' after 350 us, '0' after 440 us;
+	COL_ON <= '1', '0' after 30 us, '1' after  110 us;
+	ROW_ON <= '1', '0' after 190 us, '1' after 270 us;
+	DIG_ON <= '1', '0' after 350 us, '1' after 440 us;
 	
 	-- input signals from the keyboard
 	-- tests inputting the 6th column, 3rd row, and the number 5 to the Sudoku grid  
-	keyboard_in <=  "0000000000", 
-					"0000100000" after 30 us,  "0000000000" after 110 us,
-					"0000000100" after 190 us,  "0000000000" after 270 us,
-					"0000100000" after 350 us, "0000000000" after 440 us;
+	keyboard_in <=  "1111111111", 
+					"1111011111" after 30 us,  "1111111111" after 110 us,
+					"1111111011" after 190 us,  "1111111111" after 270 us,
+					"1111011111" after 350 us, "1111111111" after 440 us;
 
 	-- continuous system (in) clock 
 	process 
