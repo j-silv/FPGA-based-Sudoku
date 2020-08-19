@@ -39,28 +39,28 @@ begin
 	encode : process(D) is	
 	begin
 		case D is
-			when std_logic_vector(to_unsigned(1, 10)) =>	-- button input: 000000001 (user presses CLR on keyboard)
+			when "1111111110" => -- (user presses CLR on keyboard)
 			Q(7 downto 0) <= DISPLAY_DIGIT(0);
-			when std_logic_vector(to_unsigned(2, 10)) =>	-- button input: 000000010 (user presses "1" on keyboard)
+			when "1111111101" => -- (user presses "1" on keyboard)
 			Q(7 downto 0) <= DISPLAY_DIGIT(1);
-			when std_logic_vector(to_unsigned(4, 10)) =>	-- ...
+			when "1111111011" => -- etc.
 			Q(7 downto 0) <= DISPLAY_DIGIT(2);
-			when std_logic_vector(to_unsigned(8, 10)) =>
+			when "1111110111" =>
 			Q(7 downto 0) <= DISPLAY_DIGIT(3);
-			when std_logic_vector(to_unsigned(16, 10)) =>
+			when "1111101111" =>
 			Q(7 downto 0) <= DISPLAY_DIGIT(4);
-			when std_logic_vector(to_unsigned(32, 10)) =>
+			when "1111011111" =>
 			Q(7 downto 0) <= DISPLAY_DIGIT(5);
-			when std_logic_vector(to_unsigned(64, 10)) =>
+			when "1110111111" =>
 			Q(7 downto 0) <= DISPLAY_DIGIT(6);
-			when std_logic_vector(to_unsigned(128, 10)) =>
+			when "1101111111" =>
 			Q(7 downto 0) <= DISPLAY_DIGIT(7);
-			when std_logic_vector(to_unsigned(256, 10)) =>
+			when "1011111111" =>
 			Q(7 downto 0) <= DISPLAY_DIGIT(8);
-			when std_logic_vector(to_unsigned(512, 10)) =>
+			when "0111111111" =>
 			Q(7 downto 0) <= DISPLAY_DIGIT(9);
 			when others =>
-			Q(7 downto 0) <= x"00";  						-- no digit is displayed by default
+			Q(7 downto 0) <= x"00"; -- no digit is displayed by default
 		end case;
 	end process;
 end architecture comCathode;

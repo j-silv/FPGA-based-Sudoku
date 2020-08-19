@@ -23,23 +23,23 @@ begin
 	process(D) is	
 	begin
 		case D is
-			when "000000001" =>	-- the player selects the 1st row/column
-			Q <= std_logic_vector(to_unsigned(0, 4)); -- the output becomes 0 in encoded binary
-			when "000000010" => -- the player selects the 2nd row/column
-			Q <= std_logic_vector(to_unsigned(1, 4)); -- the output becomes 1 in encoded binary
-			when "000000100" =>	-- ...
+			when "111111110" =>	-- the player selects the 0st row/column
+			Q <= std_logic_vector(to_unsigned(0, 4)); -- the output becomes 1 in encoded binary
+			when "111111101" => -- the player selects the 2nd row/column
+			Q <= std_logic_vector(to_unsigned(1, 4)); -- the output becomes 0 in encoded binary
+			when "111111011" =>	-- ...
 			Q <= std_logic_vector(to_unsigned(2, 4));
-			when "000001000" =>								
+			when "111110111" =>								
 			Q <= std_logic_vector(to_unsigned(3, 4));
-			when "000010000" =>								
+			when "111101111" =>								
 			Q <= std_logic_vector(to_unsigned(4, 4));
-			when "000100000" =>								
+			when "111011111" =>								
 			Q <= std_logic_vector(to_unsigned(5, 4));
-			when "001000000" =>								
+			when "110111111" =>								
 			Q <= std_logic_vector(to_unsigned(6, 4));
-			when "010000000" =>								
+			when "101111111" =>								
 			Q <= std_logic_vector(to_unsigned(7, 4));
-			when "100000000" =>	-- the player selects the 9th row/column
+			when "011111111" =>	-- the player selects the 9th row/column
 			Q <= std_logic_vector(to_unsigned(8, 4)); -- the output becomes 8 in encoded binary
 			
 			-- the player is not expected to press two buttons simultaneously
