@@ -58,7 +58,9 @@ begin
 		elsif (rising_edge(CLK)) then
 			case state is
 				when s0 =>
-					if ((COL_ON OR ROW_ON OR DIG_ON) = '1') then
+					-- the operand is '0' because when no button is pressed
+					-- these signals are pulled up high
+					if ((COL_ON OR ROW_ON OR DIG_ON) = '0') then
 						state <= s1;
 					elsif DELAY_DONE = '1' then
 						state <= s2;
@@ -74,11 +76,11 @@ begin
 				
 				when s3 =>
 					if BOUNCE_DONE = '1' then
-						if COL_ON = '1' then
+						if COL_ON = '0' then
 							state <= s4;
-						elsif ROW_ON = '1' then
+						elsif ROW_ON = '0' then
 							state <= s5;
-						elsif DIG_ON = '1' then
+						elsif DIG_ON = '0' then
 							state <= s6;						
 						else 
 							state <= s0;
@@ -97,7 +99,7 @@ begin
 					state <= s7;
 
 				when s7 =>
-					if ((COL_ON OR ROW_ON OR DIG_ON) = '1') then
+					if ((COL_ON OR ROW_ON OR DIG_ON) = '0') then
 						state <= s7;
 					elsif KEY_DONE = '0' then
 						state <= s0;
