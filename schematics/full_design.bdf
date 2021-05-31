@@ -90,7 +90,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect -128 168 96 184)
+	(rect -168 168 56 184)
 	(text "INPUT" (rect 181 0 223 15)(font "Arial" (font_size 6)))
 	(text "keyboard_in[9..0]" (rect 5 0 134 16)(font "Arial" ))
 	(pt 224 8)
@@ -107,7 +107,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect -120 200 48 216)
+	(rect -112 200 56 216)
 	(text "INPUT" (rect 125 0 167 15)(font "Arial" (font_size 6)))
 	(text "RESET" (rect 5 0 59 16)(font "Arial" ))
 	(pt 168 8)
@@ -124,7 +124,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 216 1943 232)
+	(rect 1536 232 1775 248)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "column_select[8..0]" (rect 90 0 233 16)(font "Arial" ))
 	(pt 0 8)
@@ -141,7 +141,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 240 1882 256)
+	(rect 1536 256 1714 272)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_0[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -158,7 +158,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 264 1882 280)
+	(rect 1536 280 1714 296)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_1[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -175,7 +175,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 288 1882 304)
+	(rect 1536 304 1714 320)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_2[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -192,7 +192,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 312 1882 328)
+	(rect 1536 328 1714 344)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_3[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -209,7 +209,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 336 1882 352)
+	(rect 1536 352 1714 368)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_4[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -226,7 +226,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 360 1882 376)
+	(rect 1536 376 1714 392)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_5[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -243,7 +243,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 384 1882 400)
+	(rect 1536 400 1714 416)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_6[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -260,7 +260,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 408 1882 424)
+	(rect 1536 424 1714 440)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_7[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -277,7 +277,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 432 1882 448)
+	(rect 1536 448 1714 464)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "row_8[7..0]" (rect 90 0 172 16)(font "Arial" ))
 	(pt 0 8)
@@ -294,7 +294,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 464 1895 480)
+	(rect 1760 264 1951 280)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "DELAY_RST" (rect 90 0 185 16)(font "Arial" ))
 	(pt 0 8)
@@ -311,7 +311,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 488 1880 504)
+	(rect 1760 288 1936 304)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "KEY_CNT" (rect 90 0 164 16)(font "Arial" ))
 	(pt 0 8)
@@ -328,7 +328,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 512 1880 528)
+	(rect 1760 312 1936 328)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "KEY_RST" (rect 90 0 164 16)(font "Arial" ))
 	(pt 0 8)
@@ -345,7 +345,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 536 1888 552)
+	(rect 1760 336 1944 352)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "ADDR_CNT" (rect 90 0 178 16)(font "Arial" ))
 	(pt 0 8)
@@ -362,7 +362,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 560 1880 576)
+	(rect 1760 360 1936 376)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "SHIFT_EN" (rect 90 0 166 16)(font "Arial" ))
 	(pt 0 8)
@@ -379,7 +379,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 584 1880 600)
+	(rect 1760 384 1936 400)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "RAM_WR" (rect 90 0 161 16)(font "Arial" ))
 	(pt 0 8)
@@ -396,7 +396,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1704 632 1880 648)
+	(rect 1760 432 1936 448)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "REG_OE" (rect 90 0 158 16)(font "Arial" ))
 	(pt 0 8)
@@ -413,7 +413,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1720 608 1912 624)
+	(rect 1760 408 1952 424)
 	(text "OUTPUT" (rect 1 0 58 15)(font "Arial" (font_size 6)))
 	(text "decode_in[8]" (rect 90 0 186 16)(font "Arial" ))
 	(pt 0 8)
@@ -429,7 +429,7 @@ agreement for further details.
 	(annotation_block (location)(rect 2366 904 2454 928))
 )
 (symbol
-	(rect 56 192 104 224)
+	(rect 64 192 112 224)
 	(text "NOT" (rect 1 0 30 15)(font "Arial" (font_size 6)))
 	(text "inst5" (rect 3 21 38 37)(font "Arial" ))
 	(port
@@ -1056,7 +1056,7 @@ agreement for further details.
 		(rectangle (rect 16 16 112 64))
 	)
 	(flipy)
-	(annotation_block (parameter)(rect 792 -352 1177 -314))
+	(annotation_block (parameter)(rect 32 -224 417 -186))
 )
 (symbol
 	(rect 600 -136 728 -56)
@@ -1092,7 +1092,7 @@ agreement for further details.
 		(rectangle (rect 16 16 112 64))
 	)
 	(flipy)
-	(annotation_block (parameter)(rect 792 -296 1168 -256))
+	(annotation_block (parameter)(rect 32 -176 408 -136))
 )
 (symbol
 	(rect 560 -48 808 192)
@@ -1560,15 +1560,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 48 208)
-	(pt 56 208)
-)
-(connector
-	(text "NOT_RESET" (rect 104 192 201 208)(font "Arial" ))
-	(pt 104 208)
-	(pt 144 208)
-)
-(connector
 	(text "keyboard_in[9..0]" (rect 128 360 257 376)(font "Arial" ))
 	(pt 256 368)
 	(pt 240 368)
@@ -1822,6 +1813,15 @@ agreement for further details.
 	(text "BOUNCE_DONE" (rect 512 -138 528 -16)(font "Arial" )(vertical))
 	(pt 528 -16)
 	(pt 528 -104)
+)
+(connector
+	(pt 56 208)
+	(pt 64 208)
+)
+(connector
+	(text "NOT_RESET" (rect 112 192 209 208)(font "Arial" ))
+	(pt 112 208)
+	(pt 152 208)
 )
 (junction (pt 544 336))
 (junction (pt 880 256))
