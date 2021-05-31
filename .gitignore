@@ -10,7 +10,7 @@
 altium/*
 
 # then reinclude these two folders
-!altium/Libaries
+!altium/Libraries
 !altium/Source
 
 # exclude everything in source folder
