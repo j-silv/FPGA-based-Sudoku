@@ -21,3 +21,4 @@ altium/Source/*
 !altium/Source/*.PrjPcb
 !altium/Source/*.SchDoc
 !altium/Source/*.PrjPcbStructure
+!altium/Source/Project Outputs for sudoku/
