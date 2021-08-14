@@ -1,4 +1,4 @@
-Record=TopLevelDocument|FileName=connectors.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=connectors.SchDoc|SheetNumber=2
 Record=NoMainPathDocument|SourceDocument=connectors.SchDoc|FileName=display.SchDoc|SheetNumber=3
-Record=NoMainPathDocument|SourceDocument=connectors.SchDoc|FileName=keyboard.SchDoc|SheetNumber=2
-Record=NoMainPathDocument|SourceDocument=connectors.SchDoc|FileName=miscellaneous.SchDoc|SheetNumber= 
+Record=NoMainPathDocument|SourceDocument=connectors.SchDoc|FileName=keyboard.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=connectors.SchDoc|FileName=miscellaneous.SchDoc|SheetNumber=4
