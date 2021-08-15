@@ -140,7 +140,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=TKGOLZOY
+DocumentUniqueId=JTAYPTFY
 
 [Document7]
 DocumentPath=..\Libraries\Symbols\bemicro_max10_fpga_connectors.SchLib
@@ -157,7 +157,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=SEGHWTBC
+DocumentUniqueId=GVEINAKR
 
 [Document8]
 DocumentPath=..\Libraries\Symbols\Panasonic_ERJ_0201.SchLib
@@ -174,7 +174,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=FVLSXPZM
+DocumentUniqueId=CJMCLULV
 
 [Document9]
 DocumentPath=..\Libraries\Symbols\Panasonic_ERJ_0805.SchLib
@@ -191,7 +191,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=SZACFPDY
+DocumentUniqueId=PFYQVJTS
 
 [Document10]
 DocumentPath=..\Libraries\Symbols\tactile_button.SchLib
@@ -208,7 +208,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=YPSXVEMU
+DocumentUniqueId=AEDYXKDT
 
 [Document11]
 DocumentPath=..\Libraries\Symbols\uln2003a.SchLib
@@ -225,7 +225,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=LSYHBWQZ
+DocumentUniqueId=BGWVOTLQ
 
 [Document12]
 DocumentPath=..\Libraries\Footprints\1N4007.PcbLib
