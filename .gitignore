@@ -1,5 +1,6 @@
 *.bak
-quartus/
+quartus/*
+!quartus/sudoku.qsf
 ~*
 *.code-workspace
 

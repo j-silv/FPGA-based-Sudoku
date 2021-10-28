@@ -1,0 +1,250 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+# Date created = 16:51:27  October 24, 2021
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		sudoku_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M08DAF484C8GES
+set_global_assignment -name TOP_LEVEL_ENTITY full_design
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:51:27  OCTOBER 24, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_location_assignment PIN_N14 -to SYS_CLK
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name EN_USER_IO_WEAK_PULLUP OFF
+set_global_assignment -name EN_SPI_IO_WEAK_PULLUP OFF
+set_global_assignment -name EXTERNAL_FLASH_FALLBACK_ADDRESS 00000000
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVCMOS"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SYS_CLK
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to SYS_CLK
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name PROJECT_IP_REGENERATION_POLICY ALWAYS_REGENERATE_IP
+set_global_assignment -name IP_SEARCH_PATHS "c:\\users\\justin\\files\\projects\\sudoku\\fpga-based-sudoku\\ip"
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_2[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_0[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_1[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_2[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_2[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_0[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_1[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_2[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_2[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_0[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_1[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_2[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_2[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_0[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_1[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_2[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_1[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_2[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_0[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_1[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_2[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_1[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_2[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_0[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_1[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_2[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_1[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_2[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_0[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_1[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_2[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[7]
+set_location_assignment PIN_AA6 -to COL_ON
+set_location_assignment PIN_W15 -to DIG_ON
+set_location_assignment PIN_V16 -to ROW_ON
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to ROW_ON
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to COL_ON
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to DIG_ON
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ROW_ON
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to COL_ON
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to DIG_ON
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[0]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[0]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[1]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[1]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[2]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[2]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[3]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[3]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[4]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[4]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[5]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[5]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[6]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[6]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[7]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[7]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[8]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[8]
+set_location_assignment PIN_M1 -to RESET
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to RESET
+set_location_assignment PIN_M2 -to DELAY_RST
+set_location_assignment PIN_N1 -to KEY_CNT
+set_location_assignment PIN_R2 -to KEY_RST
+set_location_assignment PIN_T1 -to ADDR_CNT
+set_location_assignment PIN_V4 -to SHIFT_EN
+set_location_assignment PIN_T6 -to RAM_WR
+set_location_assignment PIN_AB4 -to decode_in[8]
+set_location_assignment PIN_AA5 -to REG_OE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DELAY_RST
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY_CNT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY_RST
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADDR_CNT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SHIFT_EN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RAM_WR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to decode_in[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to REG_OE
+set_location_assignment PIN_B2 -to row_2[4]
+set_location_assignment PIN_B1 -to row_2[3]
+set_location_assignment PIN_C3 -to row_2[7]
+set_location_assignment PIN_A2 -to row_2[2]
+set_location_assignment PIN_B3 -to row_2[6]
+set_location_assignment PIN_A3 -to row_2[1]
+set_location_assignment PIN_B4 -to row_2[5]
+set_location_assignment PIN_A4 -to row_2[0]
+set_location_assignment PIN_B5 -to row_1[4]
+set_location_assignment PIN_A5 -to row_1[3]
+set_location_assignment PIN_B7 -to row_1[7]
+set_location_assignment PIN_A6 -to row_1[2]
+set_location_assignment PIN_A7 -to row_1[6]
+set_location_assignment PIN_A8 -to row_1[1]
+set_location_assignment PIN_A9 -to row_1[5]
+set_location_assignment PIN_B8 -to row_0[4]
+set_location_assignment PIN_B10 -to row_1[0]
+set_location_assignment PIN_C9 -to row_0[3]
+set_location_assignment PIN_H12 -to row_0[2]
+set_location_assignment PIN_J11 -to row_0[7]
+set_location_assignment PIN_E12 -to row_0[6]
+set_location_assignment PIN_D13 -to row_0[1]
+set_location_assignment PIN_D14 -to row_0[5]
+set_location_assignment PIN_E13 -to row_0[0]
+set_location_assignment PIN_D17 -to keyboard_in[0]
+set_location_assignment PIN_W17 -to column_select[2]
+set_location_assignment PIN_E16 -to keyboard_in[8]
+set_location_assignment PIN_U15 -to column_select[1]
+set_location_assignment PIN_K14 -to keyboard_in[9]
+set_location_assignment PIN_V14 -to column_select[0]
+set_location_assignment PIN_AA15 -to RSTGAME
+set_location_assignment PIN_Y16 -to DIFFEASY
+set_location_assignment PIN_W3 -to DIFFMED
+set_location_assignment PIN_W4 -to CHECKANS
+set_location_assignment PIN_W5 -to DIFFHARD
+set_location_assignment PIN_W6 -to NEWGAME
+set_location_assignment PIN_U7 -to DIFFSET
+set_location_assignment PIN_U6 -to WRONG
+set_location_assignment PIN_W8 -to GIVEUP
+set_location_assignment PIN_W7 -to CORRECT
+set_location_assignment PIN_AA7 -to keyboard_in[1]
+set_location_assignment PIN_V10 -to keyboard_in[2]
+set_location_assignment PIN_V9 -to keyboard_in[3]
+set_location_assignment PIN_AA10 -to keyboard_in[4]
+set_location_assignment PIN_Y10 -to column_select[8]
+set_location_assignment PIN_Y14 -to keyboard_in[5]
+set_location_assignment PIN_Y13 -to column_select[7]
+set_location_assignment PIN_W14 -to keyboard_in[6]
+set_location_assignment PIN_V13 -to column_select[6]
+set_location_assignment PIN_K15 -to column_select[5]
+set_location_assignment PIN_E15 -to column_select[4]
+set_location_assignment PIN_V17 -to keyboard_in[7]
+set_location_assignment PIN_C17 -to column_select[3]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_1[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_2[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_0[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_1[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_2[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to column_select[8]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to keyboard_in[9]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[9]
+set_global_assignment -name QIP_FILE ../IP/pll/100_kHz/pll.qip
+set_global_assignment -name VHDL_FILE ../debug/HDL/test_PCB.vhd
+set_global_assignment -name MIF_FILE ../memory_initialization/ram.mif
+set_global_assignment -name BDF_FILE ../schematics/full_design.bdf
+set_global_assignment -name VHDL_FILE ../HDL/shift_stage.vhd
+set_global_assignment -name VHDL_FILE ../HDL/ram.vhd
+set_global_assignment -name VHDL_FILE ../HDL/position_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/position_encoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/ledseg_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/ledseg_encoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/key_counter.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_timeout.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_on_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_key_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/fsm.vhd
+set_global_assignment -name VHDL_FILE ../HDL/debouncer.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_decoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_counter.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_bus_mux.vhd
+set_global_assignment -name TCL_SCRIPT_FILE ../scripts/pins/full_design.tcl
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
