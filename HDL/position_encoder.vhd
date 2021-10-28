@@ -24,9 +24,9 @@ begin
 	begin
 		case D is
 			when "111111110" =>	-- the player selects the 0st row/column
-			Q <= std_logic_vector(to_unsigned(0, 4)); -- the output becomes 1 in encoded binary
+			Q <= std_logic_vector(to_unsigned(0, 4));
 			when "111111101" => -- the player selects the 2nd row/column
-			Q <= std_logic_vector(to_unsigned(1, 4)); -- the output becomes 0 in encoded binary
+			Q <= std_logic_vector(to_unsigned(1, 4)); 
 			when "111111011" =>	-- ...
 			Q <= std_logic_vector(to_unsigned(2, 4));
 			when "111110111" =>								

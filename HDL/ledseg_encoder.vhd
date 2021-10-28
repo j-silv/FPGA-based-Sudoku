@@ -21,19 +21,19 @@ end entity ledseg_encoder;
 architecture comCathode of ledseg_encoder is
 	-- this array contains the associated LED segment data in hexadecimal for
 	-- clearing and displaying numerical digits 1-9 for a common cathode 7 segment display
-	-- order of segments = A,B,C,D,E,F,G,DP
+	-- order of segments = DP, G, F, E, D, C, B, A
 	type SEG_DATA is array (0 to 9) of std_logic_vector (7 downto 0);
 	constant DISPLAY_DIGIT : SEG_DATA:=(
-		x"00", -- CLR the digit (all bits turned off)
-		x"60", -- Display "1"
-		x"DA", -- Display "2"
-		x"F2", -- ...
-		x"66",
-		x"B6",
-		x"BE",
-		x"E0",
-		x"FE",
-		x"F6" -- Display "9"
+		"00000000", -- CLR the digit (all bits turned off)
+		"00000110", -- Display "1" 
+		"01011011", -- Display "2"
+		"01001111", -- ...
+		"01100110",
+		"01101101",
+		"01111101",
+		"00000111",
+		"01111111",
+		"01101111" -- Display "9"
 	);
 begin
 	encode : process(D) is	
