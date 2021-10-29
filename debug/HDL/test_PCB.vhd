@@ -10,7 +10,7 @@ entity test_PCB is
 	port(
 		keyboard_in : in std_logic_vector(9 downto 0);
 		column_select : out std_logic_vector(8 downto 0) := "000000000";
-		row_0, row_1, row_2 : out std_logic_vector(7 downto 0) := x"00"
+		row_0, row_1, row_2, row_3, row_4, row_5, row_6, row_7, row_8 : out std_logic_vector(7 downto 0) := x"00"
 	);
 end entity test_PCB;
 
@@ -50,5 +50,11 @@ begin
 	row_0 <= tmp_led;
 	row_1 <= tmp_led;
 	row_2 <= tmp_led;
+	row_3 <= tmp_led;
+	row_4 <= tmp_led;
+	row_5 <= tmp_led;
+	row_6 <= tmp_led;
+	row_7 <= tmp_led;
+	row_8 <= tmp_led;
 
 end architecture logic;

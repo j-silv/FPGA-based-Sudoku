@@ -16,62 +16,66 @@ set NUM_COLUMNS 9
 set NUM_KEYS 10
 
 ##### Relationship between BeMicro schematic signal names and design names #########
-set LVDS_TX_7- COL_ON 
-set LVDS_TX_2+ DIG_ON 
-set LVDS_TX_1+ ROW_ON
-set GPIO_A RSTGAME 
-set GPIO_B DIFFEASY 
-set LVDS_TX_B- CHECKANS 
-set LVDS_TX_B+ DIFFMED 
-set LVDS_TX_A- NEWGAME 
-set LVDS_TX_A+ DIFFHARD 
-set LVDS_TX_9- WRONG 
-set LVDS_TX_9+ DIFFSET 
-set LVDS_TX_8- CORRECT 
-set LVDS_TX_8+ GIVEUP 
-set DIFF_RX_2+ keyboard_in[0] 
-set LVDS_TX_7+ keyboard_in[1] 
-set LVDS_TX_6+ keyboard_in[2] 
-set LVDS_TX_6- keyboard_in[3] 
-set LVDS_TX_5+ keyboard_in[4] 
-set LVDS_TX_4+ keyboard_in[5] 
-set LVDS_TX_3+ keyboard_in[6] 
-set LVDS_TX_0+ keyboard_in[7] 
-set DIFF_RX_1+ keyboard_in[8] 
-set DIFF_RX_0+ keyboard_in[9] 
-set LVDS_TX_5- column_select[8] 
-set LVDS_TX_4- column_select[7] 
-set LVDS_TX_3- column_select[6] 
-set LVDS_TX_2- column_select[0] 
-set LVDS_TX_1- column_select[1] 
-set LVDS_TX_0- column_select[2] 
-set DIFF_RX_2- column_select[3] 
-set DIFF_RX_1- column_select[4] 
-set DIFF_RX_0- column_select[5]
-set GPIO_01 row_2[4] 
-set GPIO_02 row_2[3] 
-set GPIO_03 row_2[7] 
-set GPIO_04 row_2[2] 
-set GPIO_05 row_2[6] 
-set GPIO_06 row_2[1] 
-set GPIO_07 row_2[5] 
-set GPIO_08 row_2[0] 
-set GPIO_09 row_1[4] 
-set GPIO_10 row_1[3] 
-set GPIO_11 row_1[7] 
-set GPIO_12 row_1[2] 
-set DIFF_RX_B+ row_1[6] 
-set DIFF_RX_B- row_1[1] 
-set DIFF_RX_A+ row_1[5] 
-set DIFF_RX_9+ row_1[0] 
-set DIFF_RX_A- row_0[4] 
-set DIFF_RX_9- row_0[3] 
-set DIFF_RX_8+ row_0[2] 
-set DIFF_RX_8- row_0[7] 
-set DIFF_RX_7+ row_0[6] 
-set DIFF_RX_7- row_0[1] 
-set DIFF_RX_6+ row_0[5] 
-set DIFF_RX_6- row_0[0] 
+
+set GPIO_A keyboard_in[9]
+set GPIO_B column_select[0]
+set LVDS_TX_B- keyboard_in[8]
+set LVDS_TX_B+ column_select[1]
+set LVDS_TX_A- keyboard_in[7]
+set LVDS_TX_A+ column_select[2]
+set LVDS_TX_9- ROW_ON
+set LVDS_TX_9+ column_select[3]
+set LVDS_TX_8- DIG_ON
+set LVDS_TX_8+ column_select[4]
+set LVDS_TX_7- keyboard_in[6]
+set LVDS_TX_7+ column_select[5]
+set LVDS_TX_6- keyboard_in[5]
+set LVDS_TX_6+ column_select[6]
+set LVDS_TX_5- column_select[7]
+set LVDS_TX_5+ keyboard_in[4]
+set LVDS_TX_4- column_select[8]
+set LVDS_TX_4+ keyboard_in[3]
+set LVDS_TX_3- keyboard_in[2]
+set LVDS_TX_3+ COL_ON
+set LVDS_TX_2- keyboard_in[1]
+set LVDS_TX_2+ keyboard_in[0]
+set LVDS_TX_1- GIVEUP
+set LVDS_TX_1+ CORRECT
+set LVDS_TX_0- DIFFSET
+set LVDS_TX_0+ WRONG
+
+set DIFF_RX_2+ RSTGAME
+set DIFF_RX_2- DIFFEASY
+set DIFF_RX_1+ CHECKANS
+set DIFF_RX_1- DIFFMED
+set DIFF_RX_0+ NEWGAME
+set DIFF_RX_0- DIFFHARD
+
+set GPIO_01 row_0[0]
+set GPIO_02 row_0[5]
+set GPIO_03 row_0[1]
+set GPIO_04 row_0[6]
+set GPIO_05 row_0[7]
+set GPIO_06 row_0[2]
+set GPIO_07 row_0[3]
+set GPIO_08 row_1[0]
+set GPIO_09 row_0[4]
+set GPIO_10 row_1[5]
+set GPIO_11 row_1[1]
+set GPIO_12 row_1[6]
+set DIFF_RX_B+ row_1[2]
+set DIFF_RX_B- row_1[7]
+set DIFF_RX_A+ row_1[3]
+set DIFF_RX_A- row_1[4]
+set DIFF_RX_9+ row_2[0]
+set DIFF_RX_9- row_2[5]
+set DIFF_RX_8+ row_2[1]
+set DIFF_RX_8- row_2[6]
+set DIFF_RX_7+ row_2[2]
+set DIFF_RX_7- row_2[7]
+set DIFF_RX_6+ row_2[3]
+set DIFF_RX_6- row_2[4]
+
 set EG_P1 row_3[3] 
 set EG_P2 row_3[4] 
 set EG_P3 row_4[0] 
@@ -251,7 +255,6 @@ set_location_assignment PIN_U6 -to ${LVDS_TX_9-}
 set_location_assignment PIN_W8 -to ${LVDS_TX_8+}
 set_location_assignment PIN_W7 -to ${LVDS_TX_8-}
 set_location_assignment PIN_AA7 -to ${LVDS_TX_7+}
-
 set_location_assignment PIN_V10 -to ${LVDS_TX_6+}
 set_location_assignment PIN_V9 -to ${LVDS_TX_6-}
 set_location_assignment PIN_AA10 -to ${LVDS_TX_5+}
@@ -266,55 +269,54 @@ set_location_assignment PIN_V17 -to ${LVDS_TX_0+}
 set_location_assignment PIN_W17 -to ${LVDS_TX_0-}
 
 # output LED segments for edge connector (these are fixed by PCB)
-# UNUSABLE EDGE CONNECTOR DUE TO REVERSED FOOTPRINT
-# set_location_assignment PIN_C1 -to $EG_P1
-# set_location_assignment PIN_D2 -to $EG_P2
-# set_location_assignment PIN_D1 -to $EG_P3
-# set_location_assignment PIN_D3 -to $EG_P4
-# set_location_assignment PIN_E1 -to $EG_P5
-# set_location_assignment PIN_F2 -to $EG_P6
-# set_location_assignment PIN_F1 -to $EG_P7
-# set_location_assignment PIN_G1 -to $EG_P8
-# set_location_assignment PIN_H1 -to $EG_P9
-# set_location_assignment PIN_J1 -to $EG_P10
-# set_location_assignment PIN_K2 -to $EG_P11
-# set_location_assignment PIN_L2 -to $EG_P12
-# set_location_assignment PIN_N2 -to $EG_P13
-# set_location_assignment PIN_P3 -to $EG_P14
-# set_location_assignment PIN_P1 -to $EG_P15
-# set_location_assignment PIN_R3 -to $EG_P16
-# set_location_assignment PIN_T2 -to $EG_P17
-# set_location_assignment PIN_R4 -to $EG_P18
-# set_location_assignment PIN_T5 -to $EG_P19
-# set_location_assignment PIN_Y1 -to $EG_P20
-# set_location_assignment PIN_Y2 -to $EG_P21
-# set_location_assignment PIN_AA1 -to $EG_P22
-# set_location_assignment PIN_AA2 -to $EG_P23
-# set_location_assignment PIN_Y3 -to $EG_P24
-# set_location_assignment PIN_Y4 -to $EG_P25
-# set_location_assignment PIN_AB6 -to $EG_P26
-# set_location_assignment PIN_AB7 -to $EG_P27
-# set_location_assignment PIN_AA8 -to $EG_P28
-# set_location_assignment PIN_AB8 -to $EG_P29
-# set_location_assignment PIN_E11 -to $EG_P35
-# set_location_assignment PIN_E10 -to $EG_P36
-# set_location_assignment PIN_D9 -to $EG_P37
-# set_location_assignment PIN_E9 -to $EG_P38
-# set_location_assignment PIN_E8 -to $EG_P39
-# set_location_assignment PIN_D8 -to $EG_P40
-# set_location_assignment PIN_C6 -to $EG_P46
-# set_location_assignment PIN_D5 -to $EG_P47
-# set_location_assignment PIN_C5 -to $EG_P48
-# set_location_assignment PIN_C4 -to $EG_P49
-# set_location_assignment PIN_J10 -to $EG_P51
-# set_location_assignment PIN_M9 -to $EG_P52
-# set_location_assignment PIN_M8 -to $EG_P53
-# set_location_assignment PIN_N8 -to $EG_P55
-# set_location_assignment PIN_N5 -to $EG_P56
-# set_location_assignment PIN_N4 -to $EG_P57
-# set_location_assignment PIN_N3 -to $EG_P58
-# set_location_assignment PIN_P5 -to $EG_P59
-# set_location_assignment PIN_P4 -to $EG_P60
+set_location_assignment PIN_C1 -to $EG_P1
+set_location_assignment PIN_D2 -to $EG_P2
+set_location_assignment PIN_D1 -to $EG_P3
+set_location_assignment PIN_D3 -to $EG_P4
+set_location_assignment PIN_E1 -to $EG_P5
+set_location_assignment PIN_F2 -to $EG_P6
+set_location_assignment PIN_F1 -to $EG_P7
+set_location_assignment PIN_G1 -to $EG_P8
+set_location_assignment PIN_H1 -to $EG_P9
+set_location_assignment PIN_J1 -to $EG_P10
+set_location_assignment PIN_K2 -to $EG_P11
+set_location_assignment PIN_L2 -to $EG_P12
+set_location_assignment PIN_N2 -to $EG_P13
+set_location_assignment PIN_P3 -to $EG_P14
+set_location_assignment PIN_P1 -to $EG_P15
+set_location_assignment PIN_R3 -to $EG_P16
+set_location_assignment PIN_T2 -to $EG_P17
+set_location_assignment PIN_R4 -to $EG_P18
+set_location_assignment PIN_T5 -to $EG_P19
+set_location_assignment PIN_Y1 -to $EG_P20
+set_location_assignment PIN_Y2 -to $EG_P21
+set_location_assignment PIN_AA1 -to $EG_P22
+set_location_assignment PIN_AA2 -to $EG_P23
+set_location_assignment PIN_Y3 -to $EG_P24
+set_location_assignment PIN_Y4 -to $EG_P25
+set_location_assignment PIN_AB6 -to $EG_P26
+set_location_assignment PIN_AB7 -to $EG_P27
+set_location_assignment PIN_AA8 -to $EG_P28
+set_location_assignment PIN_AB8 -to $EG_P29
+set_location_assignment PIN_E11 -to $EG_P35
+set_location_assignment PIN_E10 -to $EG_P36
+set_location_assignment PIN_D9 -to $EG_P37
+set_location_assignment PIN_E9 -to $EG_P38
+set_location_assignment PIN_E8 -to $EG_P39
+set_location_assignment PIN_D8 -to $EG_P40
+set_location_assignment PIN_C6 -to $EG_P46
+set_location_assignment PIN_D5 -to $EG_P47
+set_location_assignment PIN_C5 -to $EG_P48
+set_location_assignment PIN_C4 -to $EG_P49
+set_location_assignment PIN_J10 -to $EG_P51
+set_location_assignment PIN_M9 -to $EG_P52
+set_location_assignment PIN_M8 -to $EG_P53
+set_location_assignment PIN_N8 -to $EG_P55
+set_location_assignment PIN_N5 -to $EG_P56
+set_location_assignment PIN_N4 -to $EG_P57
+set_location_assignment PIN_N3 -to $EG_P58
+set_location_assignment PIN_P5 -to $EG_P59
+set_location_assignment PIN_P4 -to $EG_P60
 
 # unused edge connector pins
 # set_location_assignment PIN_E6 -to $EG_P41
