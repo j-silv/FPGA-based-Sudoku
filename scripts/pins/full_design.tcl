@@ -17,39 +17,46 @@ set NUM_KEYS 10
 
 ##### Relationship between BeMicro schematic signal names and design names #########
 
-set GPIO_A keyboard_in[9]
-set GPIO_B column_select[0]
-set LVDS_TX_B- keyboard_in[8]
-set LVDS_TX_B+ column_select[1]
-set LVDS_TX_A- keyboard_in[7]
-set LVDS_TX_A+ column_select[2]
-set LVDS_TX_9- ROW_ON
-set LVDS_TX_9+ column_select[3]
-set LVDS_TX_8- DIG_ON
-set LVDS_TX_8+ column_select[4]
-set LVDS_TX_7- keyboard_in[6]
-set LVDS_TX_7+ column_select[5]
-set LVDS_TX_6- keyboard_in[5]
+set GPIO_B column_select[5]
+set LVDS_TX_B+ column_select[4]
+set LVDS_TX_A+ column_select[3]
+set LVDS_TX_9+ column_select[2]
+set LVDS_TX_8+ column_select[1]
+set LVDS_TX_7+ column_select[0]
 set LVDS_TX_6+ column_select[6]
 set LVDS_TX_5- column_select[7]
-set LVDS_TX_5+ keyboard_in[4]
 set LVDS_TX_4- column_select[8]
+
+set GPIO_A keyboard_in[9]
+set LVDS_TX_B- keyboard_in[8]
+set LVDS_TX_A- keyboard_in[7]
+set LVDS_TX_7- keyboard_in[6]
+set LVDS_TX_6- keyboard_in[5]
+set LVDS_TX_5+ keyboard_in[4]
 set LVDS_TX_4+ keyboard_in[3]
 set LVDS_TX_3- keyboard_in[2]
-set LVDS_TX_3+ COL_ON
 set LVDS_TX_2- keyboard_in[1]
 set LVDS_TX_2+ keyboard_in[0]
+
+set LVDS_TX_9- ROW_ON
+set LVDS_TX_8- DIG_ON
+set LVDS_TX_3+ COL_ON
+
 set LVDS_TX_1- GIVEUP
 set LVDS_TX_1+ CORRECT
 set LVDS_TX_0- DIFFSET
 set LVDS_TX_0+ WRONG
-
 set DIFF_RX_2+ RSTGAME
 set DIFF_RX_2- DIFFEASY
 set DIFF_RX_1+ CHECKANS
 set DIFF_RX_1- DIFFMED
 set DIFF_RX_0+ NEWGAME
 set DIFF_RX_0- DIFFHARD
+
+set SW[1] RESET
+set SW[2] testmode[0]
+set SW[3] testmode[1]
+set SW[4] testmode[2]
 
 set GPIO_01 row_0[0]
 set GPIO_02 row_0[5]
@@ -80,8 +87,6 @@ set EG_P1 row_3[3]
 set EG_P2 row_3[4] 
 set EG_P3 row_4[0] 
 set EG_P4 row_4[5] 
-set EG_P5 row_4[1] 
-set EG_P6 row_4[6] 
 set EG_P7 row_4[2] 
 set EG_P8 row_4[7] 
 set EG_P9 row_4[3] 
@@ -98,7 +103,6 @@ set EG_P19 row_6[4]
 set EG_P20 row_7[0] 
 set EG_P21 row_7[5] 
 set EG_P22 row_7[1] 
-set EG_P23 row_7[6] 
 set EG_P24 row_7[2] 
 set EG_P25 row_7[7] 
 set EG_P26 row_7[3] 
@@ -111,7 +115,6 @@ set EG_P37 row_3[1]
 set EG_P38 row_3[6] 
 set EG_P39 row_3[2] 
 set EG_P40 row_3[7] 
-set EG_P46 row_5[7] 
 set EG_P47 row_5[3] 
 set EG_P48 row_5[4] 
 set EG_P49 row_6[0] 
@@ -121,9 +124,20 @@ set EG_P53 row_6[6]
 set EG_P55 row_8[1] 
 set EG_P56 row_8[6] 
 set EG_P57 row_8[2] 
-set EG_P58 row_8[7] 
 set EG_P59 row_8[3] 
 set EG_P60 row_8[4] 
+
+# -row_4[1] (R40 is not soldered on segment side)
+# -row_4[6] (R49 is not soldered on segment side)
+# -row_5[7] (R67 is shorted to ground! EG_P46/PIN 34 is short circuited to PIN 32 which is GND pin !)
+# -row_7[6] (R11 EG_P23/PIN_55 is shorted, connected to PIN_53 which is gnd pin!)
+# -row_8[7] (R24 is not soldered on segment side)
+set EG_P5 row_4[1] 
+set EG_P6 row_4[6]
+set EG_P46 row_5[7]
+set EG_P23 row_7[6]
+set EG_P58 row_8[7]
+
 ################################
 
 for {set i 0} {$i < $NUM_LED_SEGMENTS} {incr i} {
@@ -173,9 +187,32 @@ for {set i 0} {$i < $NUM_KEYS} {incr i} {
 	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to keyboard_in[$i]
 }
 
-# set pin location and logic level for main reset signal
-set_location_assignment PIN_M1 -to RESET
-set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to RESET
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GIVEUP
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to DIFFSET
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RSTGAME
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to NEWGAME
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to CHECKANS
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to GIVEUP
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to DIFFSET
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to RSTGAME
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to NEWGAME
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to CHECKANS
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WRONG
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CORRECT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFEASY
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFMED
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFHARD
+
+# user input buttons
+set_location_assignment PIN_M1 -to ${SW[1]}
+set_location_assignment PIN_R1 -to ${SW[2]}
+set_location_assignment PIN_V5 -to ${SW[3]}
+set_location_assignment PIN_AB5 -to ${SW[4]}
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to ${SW[1]}
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to ${SW[2]}
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to ${SW[3]}
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to ${SW[4]}
 
 # set pin location and logic level for internal FSM signals (debugging)
 set_location_assignment PIN_M2 -to DELAY_RST
@@ -248,8 +285,8 @@ set_location_assignment PIN_AA15 -to ${GPIO_A}
 set_location_assignment PIN_Y16 -to ${GPIO_B}
 set_location_assignment PIN_W3 -to ${LVDS_TX_B+}
 set_location_assignment PIN_W4 -to ${LVDS_TX_B-}
-set_location_assignment PIN_W5 -to ${LVDS_TX_A+}
-set_location_assignment PIN_W6 -to ${LVDS_TX_A-}
+set_location_assignment PIN_W6 -to ${LVDS_TX_A+}
+set_location_assignment PIN_W5 -to ${LVDS_TX_A-}
 set_location_assignment PIN_U7 -to ${LVDS_TX_9+}
 set_location_assignment PIN_U6 -to ${LVDS_TX_9-}
 set_location_assignment PIN_W8 -to ${LVDS_TX_8+}
@@ -273,8 +310,6 @@ set_location_assignment PIN_C1 -to $EG_P1
 set_location_assignment PIN_D2 -to $EG_P2
 set_location_assignment PIN_D1 -to $EG_P3
 set_location_assignment PIN_D3 -to $EG_P4
-set_location_assignment PIN_E1 -to $EG_P5
-set_location_assignment PIN_F2 -to $EG_P6
 set_location_assignment PIN_F1 -to $EG_P7
 set_location_assignment PIN_G1 -to $EG_P8
 set_location_assignment PIN_H1 -to $EG_P9
@@ -291,7 +326,6 @@ set_location_assignment PIN_T5 -to $EG_P19
 set_location_assignment PIN_Y1 -to $EG_P20
 set_location_assignment PIN_Y2 -to $EG_P21
 set_location_assignment PIN_AA1 -to $EG_P22
-set_location_assignment PIN_AA2 -to $EG_P23
 set_location_assignment PIN_Y3 -to $EG_P24
 set_location_assignment PIN_Y4 -to $EG_P25
 set_location_assignment PIN_AB6 -to $EG_P26
@@ -304,7 +338,6 @@ set_location_assignment PIN_D9 -to $EG_P37
 set_location_assignment PIN_E9 -to $EG_P38
 set_location_assignment PIN_E8 -to $EG_P39
 set_location_assignment PIN_D8 -to $EG_P40
-set_location_assignment PIN_C6 -to $EG_P46
 set_location_assignment PIN_D5 -to $EG_P47
 set_location_assignment PIN_C5 -to $EG_P48
 set_location_assignment PIN_C4 -to $EG_P49
@@ -314,9 +347,21 @@ set_location_assignment PIN_M8 -to $EG_P53
 set_location_assignment PIN_N8 -to $EG_P55
 set_location_assignment PIN_N5 -to $EG_P56
 set_location_assignment PIN_N4 -to $EG_P57
-set_location_assignment PIN_N3 -to $EG_P58
 set_location_assignment PIN_P5 -to $EG_P59
 set_location_assignment PIN_P4 -to $EG_P60
+
+# these segment pins are currently shorted/not operational (unsoldered side of resistors)
+# to avoid driving these to GND, they are temporaily attached to unused pins (PMOD_A[0-3], and PMOD_B[0])
+# set_location_assignment PIN_E1 -to $EG_P5
+# set_location_assignment PIN_F2 -to $EG_P6
+# set_location_assignment PIN_C6 -to $EG_P46
+# set_location_assignment PIN_AA2 -to $EG_P23
+# set_location_assignment PIN_N3 -to $EG_P58
+set_location_assignment PIN_C20 -to $EG_P5 
+set_location_assignment PIN_D19 -to $EG_P6
+set_location_assignment PIN_D18 -to $EG_P46
+set_location_assignment PIN_E18 -to $EG_P23
+set_location_assignment PIN_E19 -to $EG_P58
 
 # unused edge connector pins
 # set_location_assignment PIN_E6 -to $EG_P41
@@ -410,9 +455,6 @@ set_location_assignment PIN_P4 -to $EG_P60
 # set_location_assignment PIN_M18 -to ADXL362_SCLK
 # set_location_assignment PIN_M15 -to ADXL362_INT1
 # set_location_assignment PIN_M14 -to ADXL362_INT2
-# set_location_assignment PIN_R1 -to PB[2]
-# set_location_assignment PIN_V5 -to PB[3]
-# set_location_assignment PIN_AB5 -to PB[4]
 # set_location_assignment PIN_R11 -to SFLASH_ASDI
 # set_location_assignment PIN_R10 -to SFLASH_CSn
 # set_location_assignment PIN_P10 -to SFLASH_DATA

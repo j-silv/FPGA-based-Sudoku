@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M08DAF484C8GES
-set_global_assignment -name TOP_LEVEL_ENTITY test_PCB
+set_global_assignment -name TOP_LEVEL_ENTITY full_design
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:51:27  OCTOBER 24, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -79,7 +79,7 @@ set_location_assignment PIN_AB4 -to decode_in[8]
 set_location_assignment PIN_AA5 -to REG_OE
 set_location_assignment PIN_E13 -to row_2[4]
 set_location_assignment PIN_D14 -to row_2[3]
-set_location_assignment PIN_D13 -to row_2[7]
+set_location_assignment PIN_D13 -to row_2[7] -disable
 set_location_assignment PIN_E12 -to row_2[2]
 set_location_assignment PIN_J11 -to row_2[6]
 set_location_assignment PIN_H12 -to row_2[1]
@@ -102,11 +102,11 @@ set_location_assignment PIN_C3 -to row_0[1]
 set_location_assignment PIN_B1 -to row_0[5]
 set_location_assignment PIN_B2 -to row_0[0]
 set_location_assignment PIN_W15 -to keyboard_in[0]
-set_location_assignment PIN_W5 -to column_select[2]
+set_location_assignment PIN_U7 -to column_select[2]
 set_location_assignment PIN_W4 -to keyboard_in[8]
-set_location_assignment PIN_W3 -to column_select[1]
+set_location_assignment PIN_W8 -to column_select[1]
 set_location_assignment PIN_AA15 -to keyboard_in[9]
-set_location_assignment PIN_Y16 -to column_select[0]
+set_location_assignment PIN_AA7 -to column_select[0]
 set_location_assignment PIN_D17 -to RSTGAME
 set_location_assignment PIN_C17 -to DIFFEASY
 set_location_assignment PIN_E15 -to DIFFMED
@@ -126,10 +126,10 @@ set_location_assignment PIN_V9 -to keyboard_in[5]
 set_location_assignment PIN_Y10 -to column_select[7]
 set_location_assignment PIN_AA6 -to keyboard_in[6]
 set_location_assignment PIN_V10 -to column_select[6]
-set_location_assignment PIN_AA7 -to column_select[5]
-set_location_assignment PIN_W8 -to column_select[4]
-set_location_assignment PIN_W6 -to keyboard_in[7]
-set_location_assignment PIN_U7 -to column_select[3]
+set_location_assignment PIN_Y16 -to column_select[5]
+set_location_assignment PIN_W3 -to column_select[4]
+set_location_assignment PIN_W5 -to keyboard_in[7]
+set_location_assignment PIN_W6 -to column_select[3]
 set_global_assignment -name QIP_FILE ../IP/pll/100_kHz/pll.qip
 set_global_assignment -name VHDL_FILE ../debug/HDL/test_PCB.vhd
 set_global_assignment -name MIF_FILE ../memory_initialization/ram.mif
@@ -150,6 +150,57 @@ set_global_assignment -name VHDL_FILE ../HDL/addr_decoder.vhd
 set_global_assignment -name VHDL_FILE ../HDL/addr_counter.vhd
 set_global_assignment -name VHDL_FILE ../HDL/addr_bus_mux.vhd
 set_global_assignment -name TCL_SCRIPT_FILE ../scripts/pins/full_design.tcl
+set_location_assignment PIN_C1 -to row_3[3]
+set_location_assignment PIN_D2 -to row_3[4]
+set_location_assignment PIN_D1 -to row_4[0]
+set_location_assignment PIN_D3 -to row_4[5]
+set_location_assignment PIN_E1 -to row_4[1] -disable
+set_location_assignment PIN_F2 -to row_4[6] -disable
+set_location_assignment PIN_F1 -to row_4[2]
+set_location_assignment PIN_G1 -to row_4[7]
+set_location_assignment PIN_H1 -to row_4[3]
+set_location_assignment PIN_J1 -to row_4[4]
+set_location_assignment PIN_K2 -to row_5[0]
+set_location_assignment PIN_L2 -to row_5[5]
+set_location_assignment PIN_N2 -to row_5[1]
+set_location_assignment PIN_P3 -to row_5[6]
+set_location_assignment PIN_P1 -to row_5[2]
+set_location_assignment PIN_R3 -to row_6[2]
+set_location_assignment PIN_T2 -to row_6[7]
+set_location_assignment PIN_R4 -to row_6[3]
+set_location_assignment PIN_T5 -to row_6[4]
+set_location_assignment PIN_Y1 -to row_7[0]
+set_location_assignment PIN_Y2 -to row_7[5]
+set_location_assignment PIN_AA1 -to row_7[1]
+set_location_assignment PIN_AA2 -to row_7[6] -disable
+set_location_assignment PIN_Y3 -to row_7[2]
+set_location_assignment PIN_Y4 -to row_7[7]
+set_location_assignment PIN_AB6 -to row_7[3]
+set_location_assignment PIN_AB7 -to row_7[4]
+set_location_assignment PIN_AA8 -to row_8[0]
+set_location_assignment PIN_AB8 -to row_8[5]
+set_location_assignment PIN_E11 -to row_3[0]
+set_location_assignment PIN_E10 -to row_3[5]
+set_location_assignment PIN_D9 -to row_3[1]
+set_location_assignment PIN_E9 -to row_3[6]
+set_location_assignment PIN_E8 -to row_3[2]
+set_location_assignment PIN_D8 -to row_3[7]
+set_location_assignment PIN_C6 -to row_5[7] -disable
+set_location_assignment PIN_D5 -to row_5[3]
+set_location_assignment PIN_C5 -to row_5[4]
+set_location_assignment PIN_C4 -to row_6[0]
+set_location_assignment PIN_J10 -to row_6[5]
+set_location_assignment PIN_M9 -to row_6[1]
+set_location_assignment PIN_M8 -to row_6[6]
+set_location_assignment PIN_N8 -to row_8[1]
+set_location_assignment PIN_N5 -to row_8[6]
+set_location_assignment PIN_N4 -to row_8[2]
+set_location_assignment PIN_N3 -to row_8[7] -disable
+set_location_assignment PIN_P5 -to row_8[3]
+set_location_assignment PIN_P4 -to row_8[4]
+set_location_assignment PIN_R1 -to testmode[0]
+set_location_assignment PIN_V5 -to testmode[1]
+set_location_assignment PIN_AB5 -to testmode[2]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -343,54 +394,30 @@ set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_5[7
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_6[7]
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_7[7]
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to row_8[7]
-set_location_assignment PIN_C1 -to row_3[3]
-set_location_assignment PIN_D2 -to row_3[4]
-set_location_assignment PIN_D1 -to row_4[0]
-set_location_assignment PIN_D3 -to row_4[5]
-set_location_assignment PIN_E1 -to row_4[1]
-set_location_assignment PIN_F2 -to row_4[6]
-set_location_assignment PIN_F1 -to row_4[2]
-set_location_assignment PIN_G1 -to row_4[7]
-set_location_assignment PIN_H1 -to row_4[3]
-set_location_assignment PIN_J1 -to row_4[4]
-set_location_assignment PIN_K2 -to row_5[0]
-set_location_assignment PIN_L2 -to row_5[5]
-set_location_assignment PIN_N2 -to row_5[1]
-set_location_assignment PIN_P3 -to row_5[6]
-set_location_assignment PIN_P1 -to row_5[2]
-set_location_assignment PIN_R3 -to row_6[2]
-set_location_assignment PIN_T2 -to row_6[7]
-set_location_assignment PIN_R4 -to row_6[3]
-set_location_assignment PIN_T5 -to row_6[4]
-set_location_assignment PIN_Y1 -to row_7[0]
-set_location_assignment PIN_Y2 -to row_7[5]
-set_location_assignment PIN_AA1 -to row_7[1]
-set_location_assignment PIN_AA2 -to row_7[6]
-set_location_assignment PIN_Y3 -to row_7[2]
-set_location_assignment PIN_Y4 -to row_7[7]
-set_location_assignment PIN_AB6 -to row_7[3]
-set_location_assignment PIN_AB7 -to row_7[4]
-set_location_assignment PIN_AA8 -to row_8[0]
-set_location_assignment PIN_AB8 -to row_8[5]
-set_location_assignment PIN_E11 -to row_3[0]
-set_location_assignment PIN_E10 -to row_3[5]
-set_location_assignment PIN_D9 -to row_3[1]
-set_location_assignment PIN_E9 -to row_3[6]
-set_location_assignment PIN_E8 -to row_3[2]
-set_location_assignment PIN_D8 -to row_3[7]
-set_location_assignment PIN_C6 -to row_5[7]
-set_location_assignment PIN_D5 -to row_5[3]
-set_location_assignment PIN_C5 -to row_5[4]
-set_location_assignment PIN_C4 -to row_6[0]
-set_location_assignment PIN_J10 -to row_6[5]
-set_location_assignment PIN_M9 -to row_6[1]
-set_location_assignment PIN_M8 -to row_6[6]
-set_location_assignment PIN_N8 -to row_8[1]
-set_location_assignment PIN_N5 -to row_8[6]
-set_location_assignment PIN_N4 -to row_8[2]
-set_location_assignment PIN_N3 -to row_8[7]
-set_location_assignment PIN_P5 -to row_8[3]
-set_location_assignment PIN_P4 -to row_8[4]
-set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to CORRECT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CORRECT
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to CORRECT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to GIVEUP
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to DIFFSET
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RSTGAME
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to NEWGAME
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to CHECKANS
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to GIVEUP
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to DIFFSET
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to RSTGAME
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to NEWGAME
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to CHECKANS
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to testmode[0]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to testmode[1]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to testmode[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WRONG
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFEASY
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFMED
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFHARD
+set_location_assignment PIN_D13 -to row_2[7]
+set_location_assignment PIN_E1 -to row_4[1] -disable
+set_location_assignment PIN_C20 -to row_4[1]
+set_location_assignment PIN_D19 -to row_4[6]
+set_location_assignment PIN_D18 -to row_5[7]
+set_location_assignment PIN_E18 -to row_7[6]
+set_location_assignment PIN_E19 -to row_8[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
