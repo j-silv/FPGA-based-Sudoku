@@ -114,7 +114,7 @@ architecture bench of full_design_all_signals is
 		
 		-- simulation information
 		constant SYS_CLK_T : time := 20 ns; -- 50 MHz SYS_CLK
-		constant STOP_SIMULATION_TIME : time := 900 us;
+		constant STOP_SIMULATION_TIME : time := 20 ms;
 
 		-- input_timeout parameter information
 		CONSTANT CLK_CYCLES_TIMEOUT : integer := 500000; 
@@ -181,13 +181,15 @@ begin
 	COL_ON <= '1', '0' after 30 us, '1' after  110 us;
 	ROW_ON <= '1', '0' after 190 us, '1' after 270 us;
 	DIG_ON <= '1', '0' after 350 us, '1' after 440 us;
+
+
 	
 	-- input signals from the keyboard
 	-- tests inputting the 6th column, 3rd row, and the number 5 to the Sudoku grid  
 	keyboard_in <=  "1111111111", 
-					"1111011111" after 30 us,  "1111111111" after 110 us,
-					"1111111011" after 190 us,  "1111111111" after 270 us,
-					"1111011111" after 350 us, "1111111111" after 440 us;
+					"1111111110" after 30 us,  "1111111111" after 110 us,
+					"1111111110" after 190 us,  "1111111111" after 270 us,
+					"1111111101" after 350 us, "1111111111" after 440 us;
 
 	-- continuous system (in) clock 
 	process 

@@ -21,25 +21,26 @@ end entity test_PCB;
 
 architecture logic of test_PCB is
 	constant LED_SEG_PATTERN : std_logic_vector(7 downto 0) := x"FF";
+	constant LED_SEG_PATTERN_2 : std_logic_vector(7 downto 0) := x"00";
 begin
 
   column_select(8 downto 0) <= NOT(keyboard_in(8 downto 0));
 
 	row_0 <= LED_SEG_PATTERN;
-	row_1 <= LED_SEG_PATTERN;
-	row_2 <= LED_SEG_PATTERN;
-	row_3 <= LED_SEG_PATTERN;
-	row_4 <= LED_SEG_PATTERN;
-	row_5 <= LED_SEG_PATTERN;
-	row_6 <= LED_SEG_PATTERN;
-	row_7 <= LED_SEG_PATTERN;
-	row_8 <= LED_SEG_PATTERN;
+	row_1 <= LED_SEG_PATTERN_2;
+	row_2 <= LED_SEG_PATTERN_2;
+	row_3 <= LED_SEG_PATTERN_2;
+	row_4 <= LED_SEG_PATTERN_2;
+	row_5 <= LED_SEG_PATTERN_2;
+	row_6 <= LED_SEG_PATTERN_2;
+	row_7 <= LED_SEG_PATTERN_2;
+	row_8 <= LED_SEG_PATTERN_2;
 
-	CORRECT <= NEWGAME;
-	WRONG <= CHECKANS;
-	DIFFEASY <= RSTGAME;
-	DIFFMED <= GIVEUP;
-	DIFFHARD <= DIFFSET;
+	-- CORRECT <= NEWGAME;
+	-- WRONG <= CHECKANS;
+	-- DIFFEASY <= RSTGAME;
+	-- DIFFMED <= GIVEUP;
+	-- DIFFHARD <= DIFFSET;
 
 
 end architecture logic;

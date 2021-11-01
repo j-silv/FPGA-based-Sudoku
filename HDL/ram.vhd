@@ -32,9 +32,9 @@ architecture logic of ram is
 	signal ram : memory_t;
 	
 	-- initalize memory with .mif
-	attribute ram_init_file : string;
-	attribute ram_init_file of ram :
-	signal is "C:\Users\justin\files\Projects\sudoku\FPGA-based-Sudoku\memory_initialization\ram.mif";
+	-- attribute ram_init_file : string;
+	-- attribute ram_init_file of ram :
+	-- signal is "C:\Users\justin\files\Projects\sudoku\FPGA-based-Sudoku\memory_initialization\ram.mif";
 
 begin
 	process(CLK)

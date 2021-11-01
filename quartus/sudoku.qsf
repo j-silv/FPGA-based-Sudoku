@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M08DAF484C8GES
-set_global_assignment -name TOP_LEVEL_ENTITY full_design
+set_global_assignment -name TOP_LEVEL_ENTITY test_PCB
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:51:27  OCTOBER 24, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -130,26 +130,6 @@ set_location_assignment PIN_Y16 -to column_select[5]
 set_location_assignment PIN_W3 -to column_select[4]
 set_location_assignment PIN_W5 -to keyboard_in[7]
 set_location_assignment PIN_W6 -to column_select[3]
-set_global_assignment -name QIP_FILE ../IP/pll/100_kHz/pll.qip
-set_global_assignment -name VHDL_FILE ../debug/HDL/test_PCB.vhd
-set_global_assignment -name MIF_FILE ../memory_initialization/ram.mif
-set_global_assignment -name BDF_FILE ../schematics/full_design.bdf
-set_global_assignment -name VHDL_FILE ../HDL/shift_stage.vhd
-set_global_assignment -name VHDL_FILE ../HDL/ram.vhd
-set_global_assignment -name VHDL_FILE ../HDL/position_register.vhd
-set_global_assignment -name VHDL_FILE ../HDL/position_encoder.vhd
-set_global_assignment -name VHDL_FILE ../HDL/ledseg_register.vhd
-set_global_assignment -name VHDL_FILE ../HDL/ledseg_encoder.vhd
-set_global_assignment -name VHDL_FILE ../HDL/key_counter.vhd
-set_global_assignment -name VHDL_FILE ../HDL/input_timeout.vhd
-set_global_assignment -name VHDL_FILE ../HDL/input_on_register.vhd
-set_global_assignment -name VHDL_FILE ../HDL/input_key_register.vhd
-set_global_assignment -name VHDL_FILE ../HDL/fsm.vhd
-set_global_assignment -name VHDL_FILE ../HDL/debouncer.vhd
-set_global_assignment -name VHDL_FILE ../HDL/addr_decoder.vhd
-set_global_assignment -name VHDL_FILE ../HDL/addr_counter.vhd
-set_global_assignment -name VHDL_FILE ../HDL/addr_bus_mux.vhd
-set_global_assignment -name TCL_SCRIPT_FILE ../scripts/pins/full_design.tcl
 set_location_assignment PIN_C1 -to row_3[3]
 set_location_assignment PIN_D2 -to row_3[4]
 set_location_assignment PIN_D1 -to row_4[0]
@@ -201,6 +181,48 @@ set_location_assignment PIN_P4 -to row_8[4]
 set_location_assignment PIN_R1 -to testmode[0]
 set_location_assignment PIN_V5 -to testmode[1]
 set_location_assignment PIN_AB5 -to testmode[2]
+set_location_assignment PIN_D13 -to row_2[7]
+set_location_assignment PIN_E1 -to row_4[1] -disable
+set_location_assignment PIN_C20 -to row_4[1]
+set_location_assignment PIN_D19 -to row_4[6]
+set_location_assignment PIN_D18 -to row_5[7]
+set_location_assignment PIN_E18 -to row_7[6]
+set_location_assignment PIN_E19 -to row_8[7]
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH full_design_all_signals -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME full_design_all_signals -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id full_design_all_signals
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME full_design_all_signals -section_id full_design_all_signals
+set_global_assignment -name EDA_TEST_BENCH_FILE ../testbenches/full_design_all_signals.vhd -section_id full_design_all_signals -hdl_version VHDL_2008
+set_global_assignment -name VHDL_FILE ../HDL/full_design_simulation.vhd
+set_global_assignment -name QIP_FILE ../IP/pll/100_kHz/pll.qip
+set_global_assignment -name VHDL_FILE ../debug/HDL/test_PCB.vhd
+set_global_assignment -name MIF_FILE ../memory_initialization/ram.mif
+set_global_assignment -name BDF_FILE ../schematics/full_design.bdf
+set_global_assignment -name VHDL_FILE ../HDL/shift_stage.vhd
+set_global_assignment -name VHDL_FILE ../HDL/position_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/position_encoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/ledseg_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/ledseg_encoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/key_counter.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_timeout.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_on_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_key_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/fsm.vhd
+set_global_assignment -name VHDL_FILE ../HDL/debouncer.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_decoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_counter.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_bus_mux.vhd
+set_global_assignment -name TCL_SCRIPT_FILE ../scripts/pins/full_design.tcl
+set_global_assignment -name QIP_FILE ../IP/ram/ram.qip
+set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE WITH ERAM"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -413,11 +435,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WRONG
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFEASY
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFMED
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFHARD
-set_location_assignment PIN_D13 -to row_2[7]
-set_location_assignment PIN_E1 -to row_4[1] -disable
-set_location_assignment PIN_C20 -to row_4[1]
-set_location_assignment PIN_D19 -to row_4[6]
-set_location_assignment PIN_D18 -to row_5[7]
-set_location_assignment PIN_E18 -to row_7[6]
-set_location_assignment PIN_E19 -to row_8[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
