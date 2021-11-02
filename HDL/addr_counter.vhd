@@ -14,7 +14,7 @@ use ieee.std_logic_1164.all,
 
 entity addr_counter is 
 	port(
-		CLK,CNT_EN : in std_logic;
+		CLK,CNT_EN, RST : in std_logic;
 		Q : out std_logic_vector(7 downto 0) 
 	);
 end entity addr_counter;
@@ -32,9 +32,11 @@ architecture logic of addr_counter is
 	-- hex 01 is added to the current row count	
 	constant COUNTROW : std_logic_vector(7 downto 0):=x"01";
 begin
-	count : process(CLK) is
+	count : process(CLK, RST) is
 	begin
-		if rising_edge(CLK) then
+		if (RST = '1') then 
+			temp_Q <= x"00";
+		elsif rising_edge(CLK) then
 			if CNT_EN='1' then
 				case temp_Q is
 					-- increase row count and reset LSBs when at the last column position

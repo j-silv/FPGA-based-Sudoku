@@ -33,7 +33,7 @@ end entity addr_decoder;
 architecture cathode of addr_decoder is
 begin
 	-- this code outputs all the loaded shift register values to the output buffer
-	SHIFT_OUT	<=	'1' when (D(3 downto 0)="0001") else 
+	SHIFT_OUT	<=	'1' when (D(3 downto 0)=x"2") else 
 					'0';
 	
 	-- the following "with select" code handles when to select the correct column 

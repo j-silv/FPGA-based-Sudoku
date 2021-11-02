@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M08DAF484C8GES
-set_global_assignment -name TOP_LEVEL_ENTITY test_PCB
+set_global_assignment -name TOP_LEVEL_ENTITY full_design
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:51:27  OCTOBER 24, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -201,31 +201,6 @@ set_global_assignment -name EDA_TEST_BENCH_NAME full_design_all_signals -section
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id full_design_all_signals
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME full_design_all_signals -section_id full_design_all_signals
 set_global_assignment -name EDA_TEST_BENCH_FILE ../testbenches/full_design_all_signals.vhd -section_id full_design_all_signals -hdl_version VHDL_2008
-set_global_assignment -name VHDL_FILE ../HDL/full_design_simulation.vhd
-set_global_assignment -name QIP_FILE ../IP/pll/100_kHz/pll.qip
-set_global_assignment -name VHDL_FILE ../debug/HDL/test_PCB.vhd
-set_global_assignment -name MIF_FILE ../memory_initialization/ram.mif
-set_global_assignment -name BDF_FILE ../schematics/full_design.bdf
-set_global_assignment -name VHDL_FILE ../HDL/shift_stage.vhd
-set_global_assignment -name VHDL_FILE ../HDL/position_register.vhd
-set_global_assignment -name VHDL_FILE ../HDL/position_encoder.vhd
-set_global_assignment -name VHDL_FILE ../HDL/ledseg_register.vhd
-set_global_assignment -name VHDL_FILE ../HDL/ledseg_encoder.vhd
-set_global_assignment -name VHDL_FILE ../HDL/key_counter.vhd
-set_global_assignment -name VHDL_FILE ../HDL/input_timeout.vhd
-set_global_assignment -name VHDL_FILE ../HDL/input_on_register.vhd
-set_global_assignment -name VHDL_FILE ../HDL/input_key_register.vhd
-set_global_assignment -name VHDL_FILE ../HDL/fsm.vhd
-set_global_assignment -name VHDL_FILE ../HDL/debouncer.vhd
-set_global_assignment -name VHDL_FILE ../HDL/addr_decoder.vhd
-set_global_assignment -name VHDL_FILE ../HDL/addr_counter.vhd
-set_global_assignment -name VHDL_FILE ../HDL/addr_bus_mux.vhd
-set_global_assignment -name TCL_SCRIPT_FILE ../scripts/pins/full_design.tcl
-set_global_assignment -name QIP_FILE ../IP/ram/ram.qip
-set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE WITH ERAM"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SYS_CLK
 set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to SYS_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to row_0[0]
@@ -435,4 +410,32 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WRONG
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFEASY
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFMED
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DIFFHARD
+set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE WITH ERAM"
+set_global_assignment -name VHDL_FILE ../HDL/transparent_decoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/clock_divider.vhd
+set_global_assignment -name VHDL_FILE ../HDL/full_design_simulation.vhd
+set_global_assignment -name QIP_FILE ../IP/pll/100_kHz/pll.qip
+set_global_assignment -name VHDL_FILE ../debug/HDL/test_PCB.vhd
+set_global_assignment -name MIF_FILE ../memory_initialization/ram.mif
+set_global_assignment -name BDF_FILE ../schematics/full_design.bdf
+set_global_assignment -name VHDL_FILE ../HDL/shift_stage.vhd
+set_global_assignment -name VHDL_FILE ../HDL/position_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/position_encoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/ledseg_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/ledseg_encoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/key_counter.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_timeout.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_on_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/input_key_register.vhd
+set_global_assignment -name VHDL_FILE ../HDL/fsm.vhd
+set_global_assignment -name VHDL_FILE ../HDL/debouncer.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_decoder.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_counter.vhd
+set_global_assignment -name VHDL_FILE ../HDL/addr_bus_mux.vhd
+set_global_assignment -name TCL_SCRIPT_FILE ../scripts/pins/full_design.tcl
+set_global_assignment -name QIP_FILE ../IP/ram/ram.qip
+set_global_assignment -name BDF_FILE ../schematics/test_ram_display.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

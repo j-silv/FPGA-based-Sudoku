@@ -59,11 +59,20 @@ begin
 		end if;
 	end process;
 	
-	process(shift_out)
+	process(shift_out, rst)
 	begin
-		if rising_edge(shift_out) then
+		if (rst = '1') then 
+			row_0 <= x"00";
+			row_1 <= x"00";
+			row_2 <= x"00";
+			row_3 <= x"00";
+			row_4 <= x"00";
+			row_5 <= x"00";
+			row_6 <= x"00";
+			row_7 <= x"00";
+			row_8 <= x"00";
+		elsif (rising_edge(shift_out)) then
 			-- update LED segment data for LED matrix
-			-- this is a synchronous event
 			row_0 <= temp_row(0);
 			row_1 <= temp_row(1);
 			row_2 <= temp_row(2);
