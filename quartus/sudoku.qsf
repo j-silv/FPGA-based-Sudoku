@@ -183,11 +183,11 @@ set_location_assignment PIN_V5 -to testmode[1]
 set_location_assignment PIN_AB5 -to testmode[2]
 set_location_assignment PIN_D13 -to row_2[7]
 set_location_assignment PIN_E1 -to row_4[1] -disable
-set_location_assignment PIN_C20 -to row_4[1]
-set_location_assignment PIN_D19 -to row_4[6]
-set_location_assignment PIN_D18 -to row_5[7]
-set_location_assignment PIN_E18 -to row_7[6]
-set_location_assignment PIN_E19 -to row_8[7]
+set_location_assignment PIN_E1 -to row_4[1]
+set_location_assignment PIN_F2 -to row_4[6]
+set_location_assignment PIN_C6 -to row_5[7]
+set_location_assignment PIN_AA2 -to row_7[6]
+set_location_assignment PIN_N3 -to row_8[7]
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation

@@ -127,11 +127,6 @@ set EG_P57 row_8[2]
 set EG_P59 row_8[3] 
 set EG_P60 row_8[4] 
 
-# -row_4[1] (R40 is not soldered on segment side)
-# -row_4[6] (R49 is not soldered on segment side)
-# -row_5[7] (R67 is shorted to ground! EG_P46/PIN 34 is short circuited to PIN 32 which is GND pin !)
-# -row_7[6] (R11 EG_P23/PIN_55 is shorted, connected to PIN_53 which is gnd pin!)
-# -row_8[7] (R24 is not soldered on segment side)
 set EG_P5 row_4[1] 
 set EG_P6 row_4[6]
 set EG_P46 row_5[7]
@@ -350,18 +345,12 @@ set_location_assignment PIN_N4 -to $EG_P57
 set_location_assignment PIN_P5 -to $EG_P59
 set_location_assignment PIN_P4 -to $EG_P60
 
-# these segment pins are currently shorted/not operational (unsoldered side of resistors)
-# to avoid driving these to GND, they are temporaily attached to unused pins (PMOD_A[0-3], and PMOD_B[0])
-# set_location_assignment PIN_E1 -to $EG_P5
-# set_location_assignment PIN_F2 -to $EG_P6
-# set_location_assignment PIN_C6 -to $EG_P46
-# set_location_assignment PIN_AA2 -to $EG_P23
-# set_location_assignment PIN_N3 -to $EG_P58
-set_location_assignment PIN_C20 -to $EG_P5 
-set_location_assignment PIN_D19 -to $EG_P6
-set_location_assignment PIN_D18 -to $EG_P46
-set_location_assignment PIN_E18 -to $EG_P23
-set_location_assignment PIN_E19 -to $EG_P58
+set_location_assignment PIN_E1 -to $EG_P5
+set_location_assignment PIN_F2 -to $EG_P6
+set_location_assignment PIN_C6 -to $EG_P46
+set_location_assignment PIN_AA2 -to $EG_P23
+set_location_assignment PIN_N3 -to $EG_P58
+
 
 # unused edge connector pins
 # set_location_assignment PIN_E6 -to $EG_P41
